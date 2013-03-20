@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.9
+-- version 3.5.1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 20, 2013 at 03:20 PM
--- Server version: 5.5.8
--- PHP Version: 5.3.5
+-- Generation Time: Mar 20, 2013 at 03:29 PM
+-- Server version: 5.5.24-log
+-- PHP Version: 5.4.3
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -25,6 +26,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- Table structure for table `wp_commentmeta`
 --
 
+DROP TABLE IF EXISTS `wp_commentmeta`;
 CREATE TABLE IF NOT EXISTS `wp_commentmeta` (
   `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `comment_id` bigint(20) unsigned NOT NULL DEFAULT '0',
@@ -35,17 +37,13 @@ CREATE TABLE IF NOT EXISTS `wp_commentmeta` (
   KEY `meta_key` (`meta_key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `wp_commentmeta`
---
-
-
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `wp_comments`
 --
 
+DROP TABLE IF EXISTS `wp_comments`;
 CREATE TABLE IF NOT EXISTS `wp_comments` (
   `comment_ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `comment_post_ID` bigint(20) unsigned NOT NULL DEFAULT '0',
@@ -74,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `wp_comments` (
 --
 
 INSERT INTO `wp_comments` (`comment_ID`, `comment_post_ID`, `comment_author`, `comment_author_email`, `comment_author_url`, `comment_author_IP`, `comment_date`, `comment_date_gmt`, `comment_content`, `comment_karma`, `comment_approved`, `comment_agent`, `comment_type`, `comment_parent`, `user_id`) VALUES
-(1, 1, 'Mr WordPress', '', 'http://wordpress.org/', '', '2013-03-20 10:40:55', '2013-03-20 10:40:55', 'Hi, this is a comment.\nTo delete a comment, just log in and view the post&#039;s comments. There you will have the option to edit or delete them.', 0, '1', '', '', 0, 0);
+(1, 1, 'Mr WordPress', '', 'http://wordpress.org/', '', '2013-03-20 10:40:55', '2013-03-20 10:40:55', 'Hi, this is a comment.\nTo delete a comment, just log in and view the post&#039;s comments. There you will have the option to edit or delete them.', 0, 'post-trashed', '', '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -82,6 +80,7 @@ INSERT INTO `wp_comments` (`comment_ID`, `comment_post_ID`, `comment_author`, `c
 -- Table structure for table `wp_links`
 --
 
+DROP TABLE IF EXISTS `wp_links`;
 CREATE TABLE IF NOT EXISTS `wp_links` (
   `link_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `link_url` varchar(255) NOT NULL DEFAULT '',
@@ -100,17 +99,13 @@ CREATE TABLE IF NOT EXISTS `wp_links` (
   KEY `link_visible` (`link_visible`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `wp_links`
---
-
-
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `wp_options`
 --
 
+DROP TABLE IF EXISTS `wp_options`;
 CREATE TABLE IF NOT EXISTS `wp_options` (
   `option_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `option_name` varchar(64) NOT NULL DEFAULT '',
@@ -118,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `wp_options` (
   `autoload` varchar(20) NOT NULL DEFAULT 'yes',
   PRIMARY KEY (`option_id`),
   UNIQUE KEY `option_name` (`option_name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=295 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=334 ;
 
 --
 -- Dumping data for table `wp_options`
@@ -159,7 +154,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (32, 'hack_file', '0', 'yes'),
 (33, 'blog_charset', 'UTF-8', 'yes'),
 (34, 'moderation_keys', '', 'no'),
-(35, 'active_plugins', 'a:1:{i:0;s:44:"wp-live-server-deploy/live-server-deploy.php";}', 'yes'),
+(35, 'active_plugins', 'a:5:{i:0;s:41:"jetpack-post-views/jetpack-post-views.php";i:1;s:19:"jetpack/jetpack.php";i:2;s:43:"recent-posts-slider/recent-posts-slider.php";i:3;s:43:"shortcodes-ultimate/shortcodes-ultimate.php";i:4;s:44:"wp-live-server-deploy/live-server-deploy.php";}', 'yes'),
 (36, 'home', 'http://localhost/inter', 'yes'),
 (37, 'category_base', '', 'yes'),
 (38, 'ping_sites', 'http://rpc.pingomatic.com/', 'yes'),
@@ -167,7 +162,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (40, 'comment_max_links', '2', 'yes'),
 (41, 'gmt_offset', '0', 'yes'),
 (42, 'default_email_category', '1', 'yes'),
-(43, 'recently_edited', 'a:2:{i:0;s:58:"C:\\xampp\\htdocs\\inter/wp-content/themes/newsplus/style.css";i:1;s:0:"";}', 'no'),
+(43, 'recently_edited', 'a:3:{i:0;s:80:"C:\\wamp\\www\\inter/wp-content/plugins/recent-posts-slider/recent-posts-slider.php";i:1;s:58:"C:\\xampp\\htdocs\\inter/wp-content/themes/newsplus/style.css";i:2;s:0:"";}', 'no'),
 (44, 'template', 'newsplus', 'yes'),
 (45, 'stylesheet', 'newsplus', 'yes'),
 (46, 'comment_whitelist', '1', 'yes'),
@@ -222,8 +217,8 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (95, 'widget_recent-comments', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
 (96, 'widget_archives', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
 (97, 'widget_meta', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
-(98, 'sidebars_widgets', 'a:8:{s:19:"wp_inactive_widgets";a:0:{}s:17:"default-headerbar";a:0:{}s:15:"default-sidebar";a:3:{i:0;s:24:"newsplus-popular-posts-2";i:1;s:17:"newsplus-social-2";i:2;s:17:"newsplus-flickr-2";}s:18:"secondary-column-1";a:0:{}s:18:"secondary-column-2";a:0:{}s:18:"secondary-column-3";a:0:{}s:18:"secondary-column-4";a:0:{}s:13:"array_version";i:3;}', 'yes'),
-(99, 'cron', 'a:9:{i:1363785888;a:1:{s:26:"upgrader_scheduled_cleanup";a:1:{s:32:"adcb9b75260590ff6058773ddcb9ddd6";a:2:{s:8:"schedule";b:0;s:4:"args";a:1:{i:0;i:4;}}}}i:1363786915;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1363787005;a:1:{s:8:"do_pings";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:2:{s:8:"schedule";b:0;s:4:"args";a:0:{}}}}i:1363787875;a:1:{s:26:"upgrader_scheduled_cleanup";a:1:{s:32:"60fda3b54003017dc64a0c492471bbfe";a:2:{s:8:"schedule";b:0;s:4:"args";a:1:{i:0;i:8;}}}}i:1363788055;a:1:{s:26:"upgrader_scheduled_cleanup";a:1:{s:32:"b4b17768ecd6a3369b716a0ce3abb8f6";a:2:{s:8:"schedule";b:0;s:4:"args";a:1:{i:0;i:9;}}}}i:1363788082;a:1:{s:26:"upgrader_scheduled_cleanup";a:1:{s:32:"c8bde69a9f79ca24059e3807f9a3bcf8";a:2:{s:8:"schedule";b:0;s:4:"args";a:1:{i:0;i:10;}}}}i:1363819281;a:3:{s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1363862500;a:1:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}s:7:"version";i:2;}', 'yes'),
+(98, 'sidebars_widgets', 'a:8:{s:19:"wp_inactive_widgets";a:1:{i:0;s:27:"jetpack-post-views-widget-2";}s:17:"default-headerbar";a:0:{}s:15:"default-sidebar";a:3:{i:0;s:24:"newsplus-popular-posts-2";i:1;s:17:"newsplus-social-2";i:2;s:17:"newsplus-flickr-2";}s:18:"secondary-column-1";a:0:{}s:18:"secondary-column-2";a:0:{}s:18:"secondary-column-3";a:0:{}s:18:"secondary-column-4";a:0:{}s:13:"array_version";i:3;}', 'yes'),
+(99, 'cron', 'a:9:{i:1363795209;a:1:{s:20:"jetpack_clean_nonces";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:6:"hourly";s:4:"args";a:0:{}s:8:"interval";i:3600;}}}i:1363795305;a:1:{s:35:"jetpack_post_views_scheduled_update";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:6:"hourly";s:4:"args";a:0:{}s:8:"interval";i:3600;}}}i:1363798797;a:1:{s:26:"upgrader_scheduled_cleanup";a:1:{s:32:"799be243d6827cc0bc0951691920a50b";a:2:{s:8:"schedule";b:0;s:4:"args";a:1:{i:0;i:24;}}}}i:1363799342;a:1:{s:26:"upgrader_scheduled_cleanup";a:1:{s:32:"2af2e0878689b7c2fa62ccf0765f5768";a:2:{s:8:"schedule";b:0;s:4:"args";a:1:{i:0;i:25;}}}}i:1363799885;a:1:{s:26:"upgrader_scheduled_cleanup";a:1:{s:32:"4334b88fe3501b2f0e4f630eb24f7ca5";a:2:{s:8:"schedule";b:0;s:4:"args";a:1:{i:0;i:26;}}}}i:1363819281;a:3:{s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1363862500;a:1:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1363873315;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}s:7:"version";i:2;}', 'yes'),
 (101, '_site_transient_update_core', 'O:8:"stdClass":3:{s:7:"updates";a:1:{i:0;O:8:"stdClass":9:{s:8:"response";s:6:"latest";s:8:"download";s:40:"http://wordpress.org/wordpress-3.5.1.zip";s:6:"locale";s:5:"en_US";s:8:"packages";O:8:"stdClass":4:{s:4:"full";s:40:"http://wordpress.org/wordpress-3.5.1.zip";s:10:"no_content";s:51:"http://wordpress.org/wordpress-3.5.1-no-content.zip";s:11:"new_bundled";s:52:"http://wordpress.org/wordpress-3.5.1-new-bundled.zip";s:7:"partial";b:0;}s:7:"current";s:5:"3.5.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"3.5";s:15:"partial_version";s:0:"";}}s:12:"last_checked";i:1363776091;s:15:"version_checked";s:5:"3.5.1";}', 'yes'),
 (106, '_site_transient_timeout_browser_7fd9ea81a2820d1be30701b7cd4a3044', '1364380893', 'yes'),
 (107, '_site_transient_browser_7fd9ea81a2820d1be30701b7cd4a3044', 'a:9:{s:8:"platform";s:7:"Windows";s:4:"name";s:6:"Chrome";s:7:"version";s:13:"25.0.1364.172";s:10:"update_url";s:28:"http://www.google.com/chrome";s:7:"img_src";s:49:"http://s.wordpress.org/images/browsers/chrome.png";s:11:"img_src_ssl";s:48:"https://wordpress.org/images/browsers/chrome.png";s:15:"current_version";s:2:"18";s:7:"upgrade";b:0;s:8:"insecure";b:0;}', 'yes'),
@@ -260,8 +255,8 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (133, '_transient_timeout_feed_mod_57bc725ad6568758915363af670fd8bc', '1363819300', 'no'),
 (134, '_transient_dash_aa95765b5cc111c56d5993d476b1c2f0', '<div class="rss-widget"><ul><li><a class=''rsswidget'' href=''http://wordpress.tv/2013/03/18/lisa-sabin-wilson-oh-the-themes-youll-do/'' title='' [&hellip;]''>WordPress.tv: Lisa Sabin-Wilson: Oh, The Themes You’ll Do!</a></li><li><a class=''rsswidget'' href=''http://feedproxy.google.com/~r/weblogtoolscollection/UXMP/~3/yiyrwU_8gQQ/'' title=''Cazuela is a neutral colored theme. Ilisa is a clean and minimal theme that can be easily used as a personal portfolio or a business website. Partition has a light, lively, colorful, yet professional and classic appearance. [&hellip;]''>Weblog Tools Collection: WordPress Theme Releases for 3/19</a></li><li><a class=''rsswidget'' href=''http://wordpress.tv/2013/03/18/noah-dyer-growth/'' title='' [&hellip;]''>WordPress.tv: Noah Dyer: Growth</a></li><li><a class=''rsswidget'' href=''http://wordpress.tv/2013/03/18/how-to-install-jetpack-site-stats-on-your-wordpress-site/'' title='' [&hellip;]''>WordPress.tv: How to Install Jetpack Site Stats on your WordPress site</a></li><li><a class=''rsswidget'' href=''http://wptvblog.wordpress.com/2013/03/18/get-involved/'' title=''WordPress.tv is now open for video submissions from the WordPress community. Do you record your WordPress meetup? Submit it to WordPress.tv! Do you record WordPress screencast tutorials? Submit them to WordPress.tv! Do you create some other form of WP video awesomesauce that would benefit the community? WordPress.tv might be just the place for it. Fair warni [&hellip;]''>WordPress.tv Blog: Get Involved!</a></li></ul></div>', 'no'),
 (135, '_transient_feed_mod_57bc725ad6568758915363af670fd8bc', '1363776100', 'no'),
-(136, '_transient_timeout_plugin_slugs', '1363874594', 'no'),
-(137, '_transient_plugin_slugs', 'a:3:{i:0;s:19:"akismet/akismet.php";i:1;s:9:"hello.php";i:2;s:44:"wp-live-server-deploy/live-server-deploy.php";}', 'no'),
+(136, '_transient_timeout_plugin_slugs', '1363879093', 'no'),
+(137, '_transient_plugin_slugs', 'a:7:{i:0;s:19:"akismet/akismet.php";i:1;s:9:"hello.php";i:2;s:19:"jetpack/jetpack.php";i:3;s:41:"jetpack-post-views/jetpack-post-views.php";i:4;s:43:"recent-posts-slider/recent-posts-slider.php";i:5;s:43:"shortcodes-ultimate/shortcodes-ultimate.php";i:6;s:44:"wp-live-server-deploy/live-server-deploy.php";}', 'no'),
 (138, '_transient_timeout_dash_de3249c4736ad3bd2cd29147c4a0d43e', '1363819300', 'no'),
 (139, '_transient_dash_de3249c4736ad3bd2cd29147c4a0d43e', '<h4>Most Popular</h4>\n<h5><a href=''http://wordpress.org/extend/plugins/ultimate-tinymce/''>Ultimate TinyMCE</a></h5>&nbsp;<span>(<a href=''plugin-install.php?tab=plugin-information&amp;plugin=ultimate-tinymce&amp;_wpnonce=b16b9123fd&amp;TB_iframe=true&amp;width=600&amp;height=800'' class=''thickbox'' title=''Ultimate TinyMCE''>Install</a>)</span>\n<p>Description: Beef up your visual tinymce editor with a plethora of advanced options.</p>\n<h4>Newest Plugins</h4>\n<h5><a href=''http://wordpress.org/extend/plugins/cat-signal/''>Internet Defense League Cat Signal</a></h5>&nbsp;<span>(<a href=''plugin-install.php?tab=plugin-information&amp;plugin=cat-signal&amp;_wpnonce=812d357d50&amp;TB_iframe=true&amp;width=600&amp;height=800'' class=''thickbox'' title=''Internet Defense League Cat Signal''>Install</a>)</span>\n<p>A WordPress plugin to automatically load either the modal or the banner Cat Signal when there is an active campaign from the Internet Defense League.</p>\n', 'no'),
 (140, '_site_transient_timeout_wporg_theme_feature_list', '1363799322', 'yes'),
@@ -333,13 +328,10 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (210, 'wpzoom_theme_last_checked', '1363778702', 'yes'),
 (211, 'wpzoom_wpzoom_activated', 'yes', 'yes'),
 (212, 'wpzoom_wpzoom_activated_time', '1363778703', 'yes'),
-(215, '_site_transient_update_themes', 'O:8:"stdClass":3:{s:12:"last_checked";i:1363785485;s:7:"checked";a:4:{s:9:"academica";s:5:"2.0.3";s:8:"newsplus";s:5:"1.0.1";s:12:"twentyeleven";s:3:"1.5";s:12:"twentytwelve";s:3:"1.1";}s:8:"response";a:0:{}}', 'yes'),
-(216, 'theme_mods_newsplus', 'a:7:{i:0;b:0;s:18:"nav_menu_locations";a:2:{s:9:"secondary";i:0;s:7:"primary";i:0;}s:16:"background_color";s:6:"000000";s:16:"background_image";s:0:"";s:17:"background_repeat";s:6:"repeat";s:21:"background_position_x";s:4:"left";s:21:"background_attachment";s:5:"fixed";}', 'yes'),
+(215, '_site_transient_update_themes', 'O:8:"stdClass":3:{s:12:"last_checked";i:1363791297;s:7:"checked";a:4:{s:9:"academica";s:5:"2.0.3";s:8:"newsplus";s:5:"1.0.1";s:12:"twentyeleven";s:3:"1.5";s:12:"twentytwelve";s:3:"1.1";}s:8:"response";a:0:{}}', 'yes'),
+(216, 'theme_mods_newsplus', 'a:7:{i:0;b:0;s:18:"nav_menu_locations";a:2:{s:9:"secondary";i:0;s:7:"primary";i:7;}s:16:"background_color";s:6:"000000";s:16:"background_image";s:0:"";s:17:"background_repeat";s:6:"repeat";s:21:"background_position_x";s:4:"left";s:21:"background_attachment";s:5:"fixed";}', 'yes'),
 (217, 'woocommerce_theme_support_check', 'newsplus', 'yes'),
 (218, 'recently_activated', 'a:0:{}', 'yes'),
-(219, '_site_transient_timeout_poptags_40cd750bba9870f18aada2478b24840a', '1363791754', 'yes'),
-(220, '_site_transient_poptags_40cd750bba9870f18aada2478b24840a', 'a:40:{s:6:"widget";a:3:{s:4:"name";s:6:"widget";s:4:"slug";s:6:"widget";s:5:"count";s:4:"3406";}s:4:"post";a:3:{s:4:"name";s:4:"Post";s:4:"slug";s:4:"post";s:5:"count";s:4:"2207";}s:6:"plugin";a:3:{s:4:"name";s:6:"plugin";s:4:"slug";s:6:"plugin";s:5:"count";s:4:"2091";}s:5:"admin";a:3:{s:4:"name";s:5:"admin";s:4:"slug";s:5:"admin";s:5:"count";s:4:"1732";}s:5:"posts";a:3:{s:4:"name";s:5:"posts";s:4:"slug";s:5:"posts";s:5:"count";s:4:"1645";}s:7:"sidebar";a:3:{s:4:"name";s:7:"sidebar";s:4:"slug";s:7:"sidebar";s:5:"count";s:4:"1450";}s:7:"twitter";a:3:{s:4:"name";s:7:"twitter";s:4:"slug";s:7:"twitter";s:5:"count";s:4:"1165";}s:6:"google";a:3:{s:4:"name";s:6:"google";s:4:"slug";s:6:"google";s:5:"count";s:4:"1161";}s:8:"comments";a:3:{s:4:"name";s:8:"comments";s:4:"slug";s:8:"comments";s:5:"count";s:4:"1153";}s:6:"images";a:3:{s:4:"name";s:6:"images";s:4:"slug";s:6:"images";s:5:"count";s:4:"1119";}s:4:"page";a:3:{s:4:"name";s:4:"page";s:4:"slug";s:4:"page";s:5:"count";s:4:"1066";}s:5:"image";a:3:{s:4:"name";s:5:"image";s:4:"slug";s:5:"image";s:5:"count";s:3:"983";}s:5:"links";a:3:{s:4:"name";s:5:"links";s:4:"slug";s:5:"links";s:5:"count";s:3:"892";}s:3:"seo";a:3:{s:4:"name";s:3:"seo";s:4:"slug";s:3:"seo";s:5:"count";s:3:"836";}s:8:"facebook";a:3:{s:4:"name";s:8:"Facebook";s:4:"slug";s:8:"facebook";s:5:"count";s:3:"826";}s:9:"shortcode";a:3:{s:4:"name";s:9:"shortcode";s:4:"slug";s:9:"shortcode";s:5:"count";s:3:"767";}s:9:"wordpress";a:3:{s:4:"name";s:9:"wordpress";s:4:"slug";s:9:"wordpress";s:5:"count";s:3:"724";}s:7:"gallery";a:3:{s:4:"name";s:7:"gallery";s:4:"slug";s:7:"gallery";s:5:"count";s:3:"719";}s:6:"social";a:3:{s:4:"name";s:6:"social";s:4:"slug";s:6:"social";s:5:"count";s:3:"665";}s:3:"rss";a:3:{s:4:"name";s:3:"rss";s:4:"slug";s:3:"rss";s:5:"count";s:3:"664";}s:5:"pages";a:3:{s:4:"name";s:5:"pages";s:4:"slug";s:5:"pages";s:5:"count";s:3:"617";}s:7:"widgets";a:3:{s:4:"name";s:7:"widgets";s:4:"slug";s:7:"widgets";s:5:"count";s:3:"613";}s:6:"jquery";a:3:{s:4:"name";s:6:"jquery";s:4:"slug";s:6:"jquery";s:5:"count";s:3:"593";}s:4:"ajax";a:3:{s:4:"name";s:4:"AJAX";s:4:"slug";s:4:"ajax";s:5:"count";s:3:"573";}s:5:"email";a:3:{s:4:"name";s:5:"email";s:4:"slug";s:5:"email";s:5:"count";s:3:"524";}s:5:"media";a:3:{s:4:"name";s:5:"media";s:4:"slug";s:5:"media";s:5:"count";s:3:"503";}s:10:"buddypress";a:3:{s:4:"name";s:10:"buddypress";s:4:"slug";s:10:"buddypress";s:5:"count";s:3:"498";}s:10:"javascript";a:3:{s:4:"name";s:10:"javascript";s:4:"slug";s:10:"javascript";s:5:"count";s:3:"496";}s:5:"video";a:3:{s:4:"name";s:5:"video";s:4:"slug";s:5:"video";s:5:"count";s:3:"490";}s:4:"feed";a:3:{s:4:"name";s:4:"feed";s:4:"slug";s:4:"feed";s:5:"count";s:3:"471";}s:5:"photo";a:3:{s:4:"name";s:5:"photo";s:4:"slug";s:5:"photo";s:5:"count";s:3:"466";}s:7:"content";a:3:{s:4:"name";s:7:"content";s:4:"slug";s:7:"content";s:5:"count";s:3:"444";}s:6:"photos";a:3:{s:4:"name";s:6:"photos";s:4:"slug";s:6:"photos";s:5:"count";s:3:"441";}s:4:"link";a:3:{s:4:"name";s:4:"link";s:4:"slug";s:4:"link";s:5:"count";s:3:"432";}s:8:"category";a:3:{s:4:"name";s:8:"category";s:4:"slug";s:8:"category";s:5:"count";s:3:"404";}s:4:"spam";a:3:{s:4:"name";s:4:"spam";s:4:"slug";s:4:"spam";s:5:"count";s:3:"401";}s:5:"stats";a:3:{s:4:"name";s:5:"stats";s:4:"slug";s:5:"stats";s:5:"count";s:3:"399";}s:5:"flash";a:3:{s:4:"name";s:5:"flash";s:4:"slug";s:5:"flash";s:5:"count";s:3:"383";}s:7:"youtube";a:3:{s:4:"name";s:7:"youtube";s:4:"slug";s:7:"youtube";s:5:"count";s:3:"382";}s:7:"comment";a:3:{s:4:"name";s:7:"comment";s:4:"slug";s:7:"comment";s:5:"count";s:3:"378";}}', 'yes'),
-(221, '_site_transient_update_plugins', 'O:8:"stdClass":3:{s:12:"last_checked";i:1363788192;s:7:"checked";a:3:{s:19:"akismet/akismet.php";s:5:"2.5.7";s:9:"hello.php";s:3:"1.6";s:44:"wp-live-server-deploy/live-server-deploy.php";s:3:"1.2";}s:8:"response";a:0:{}}', 'yes'),
 (222, '_site_transient_timeout_browser_04b26cd3b65bb2a2becf12a2487638dc', '1364390242', 'yes'),
 (223, '_site_transient_browser_04b26cd3b65bb2a2becf12a2487638dc', 'a:9:{s:8:"platform";s:7:"Windows";s:4:"name";s:7:"Firefox";s:7:"version";s:4:"19.0";s:10:"update_url";s:23:"http://www.firefox.com/";s:7:"img_src";s:50:"http://s.wordpress.org/images/browsers/firefox.png";s:11:"img_src_ssl";s:49:"https://wordpress.org/images/browsers/firefox.png";s:15:"current_version";s:2:"16";s:7:"upgrade";b:0;s:8:"insecure";b:0;}', 'yes'),
 (226, 'pls_layout', 'stretched', 'yes'),
@@ -383,11 +375,8 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (264, 'mf_width', '370', 'yes'),
 (265, 'mf_height', '9999', 'yes'),
 (266, 'nav_menu_options', 'a:2:{i:0;b:0;s:8:"auto_add";a:0:{}}', 'yes'),
-(267, '_transient_doing_cron', '1363788799.9426910877227783203125', 'yes'),
 (268, 'widget_newsplus-social', 'a:2:{i:2;a:33:{s:5:"title";s:0:"";s:11:"twitter_url";s:0:"";s:7:"twitter";b:0;s:12:"facebook_url";s:91:"http://www.facebook.com/pages/Interparty-Youth-Platform-IYOP/215134021927161?ref=ts&fref=ts";s:8:"facebook";b:1;s:6:"in_url";s:0:"";s:2:"in";b:0;s:9:"gplus_url";s:0:"";s:5:"gplus";b:0;s:9:"yahoo_url";s:0:"";s:5:"yahoo";b:0;s:13:"delicious_url";s:0:"";s:9:"delicious";b:0;s:10:"flickr_url";s:0:"";s:6:"flickr";b:0;s:9:"skype_url";s:0:"";s:5:"skype";b:0;s:9:"vimeo_url";s:0:"";s:5:"vimeo";b:0;s:9:"utube_url";s:0:"";s:5:"utube";b:0;s:8:"pint_url";s:0:"";s:4:"pint";b:0;s:11:"blogger_url";s:0:"";s:7:"blogger";b:0;s:10:"tumblr_url";s:0:"";s:6:"tumblr";b:0;s:14:"soundcloud_url";s:0:"";s:10:"soundcloud";b:0;s:10:"lastfm_url";s:0:"";s:6:"lastfm";b:0;s:7:"rss_url";s:0:"";s:3:"rss";b:0;}s:12:"_multiwidget";i:1;}', 'yes'),
 (269, 'widget_newsplus-flickr', 'a:2:{i:2;a:9:{s:5:"title";s:0:"";s:6:"source";s:4:"user";s:7:"user_ID";s:14:"48531931%40N03";s:11:"user_set_ID";s:17:"72157624641855013";s:8:"group_ID";s:0:"";s:3:"tag";s:0:"";s:6:"number";i:9;s:14:"display_random";b:0;s:4:"text";s:0:"";}s:12:"_multiwidget";i:1;}', 'yes'),
-(270, '_site_transient_timeout_theme_roots', '1363789175', 'yes'),
-(271, '_site_transient_theme_roots', 'a:4:{s:9:"academica";s:7:"/themes";s:8:"newsplus";s:7:"/themes";s:12:"twentyeleven";s:7:"/themes";s:12:"twentytwelve";s:7:"/themes";}', 'yes'),
 (272, 'nav_bg', '#000000', 'yes'),
 (273, 'nav_link_color', '#dadada', 'yes'),
 (274, 'nav_link_hover_color', '#fff', 'yes'),
@@ -408,9 +397,39 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (289, 'footer_text_color', '#aaa', 'yes'),
 (290, 'footer_link_color', '#ccc', 'yes'),
 (291, 'footer_link_hover_color', '#fff', 'yes'),
-(292, 'category_children', 'a:0:{}', 'yes'),
-(293, '_transient_random_seed', 'd5d54479870ba1a34d6a38dad26026ef', 'yes'),
-(294, 'widget_newsplus-popular-posts', 'a:2:{i:2;a:5:{s:5:"title";s:0:"";s:6:"number";i:5;s:4:"cats";s:0:"";s:6:"offset";s:1:"0";s:10:"hide_thumb";b:0;}s:12:"_multiwidget";i:1;}', 'yes');
+(293, '_transient_random_seed', '5a8bf9b84d9e6cde5c8b341f25e39646', 'yes'),
+(294, 'widget_newsplus-popular-posts', 'a:2:{i:2;a:5:{s:5:"title";s:0:"";s:6:"number";i:5;s:4:"cats";s:0:"";s:6:"offset";s:1:"0";s:10:"hide_thumb";b:0;}s:12:"_multiwidget";i:1;}', 'yes'),
+(297, 'category_children', 'a:0:{}', 'yes'),
+(300, '_site_transient_timeout_theme_roots', '1363793095', 'yes'),
+(301, '_site_transient_theme_roots', 'a:4:{s:9:"academica";s:7:"/themes";s:8:"newsplus";s:7:"/themes";s:12:"twentyeleven";s:7:"/themes";s:12:"twentytwelve";s:7:"/themes";}', 'yes'),
+(304, 'jetpack_activated', '1', 'yes'),
+(305, 'jetpack_options', 'a:4:{s:7:"version";s:14:"2.2:1363791609";s:11:"old_version";s:14:"2.2:1363791609";s:28:"fallback_no_verify_ssl_certs";i:0;s:9:"time_diff";i:6;}', 'yes'),
+(307, 'jetpack_register', 'SGV6l1fxfifqamwO2yaR4A8b09p52fAa:7vgp7XKt6aauirqnLThk6lwErk3zWxy6:1363792224', 'yes'),
+(308, '_site_transient_timeout_poptags_40cd750bba9870f18aada2478b24840a', '1363802657', 'yes'),
+(309, '_site_transient_poptags_40cd750bba9870f18aada2478b24840a', 'a:40:{s:6:"widget";a:3:{s:4:"name";s:6:"widget";s:4:"slug";s:6:"widget";s:5:"count";s:4:"3406";}s:4:"post";a:3:{s:4:"name";s:4:"Post";s:4:"slug";s:4:"post";s:5:"count";s:4:"2207";}s:6:"plugin";a:3:{s:4:"name";s:6:"plugin";s:4:"slug";s:6:"plugin";s:5:"count";s:4:"2091";}s:5:"admin";a:3:{s:4:"name";s:5:"admin";s:4:"slug";s:5:"admin";s:5:"count";s:4:"1732";}s:5:"posts";a:3:{s:4:"name";s:5:"posts";s:4:"slug";s:5:"posts";s:5:"count";s:4:"1645";}s:7:"sidebar";a:3:{s:4:"name";s:7:"sidebar";s:4:"slug";s:7:"sidebar";s:5:"count";s:4:"1450";}s:7:"twitter";a:3:{s:4:"name";s:7:"twitter";s:4:"slug";s:7:"twitter";s:5:"count";s:4:"1165";}s:6:"google";a:3:{s:4:"name";s:6:"google";s:4:"slug";s:6:"google";s:5:"count";s:4:"1161";}s:8:"comments";a:3:{s:4:"name";s:8:"comments";s:4:"slug";s:8:"comments";s:5:"count";s:4:"1153";}s:6:"images";a:3:{s:4:"name";s:6:"images";s:4:"slug";s:6:"images";s:5:"count";s:4:"1119";}s:4:"page";a:3:{s:4:"name";s:4:"page";s:4:"slug";s:4:"page";s:5:"count";s:4:"1066";}s:5:"image";a:3:{s:4:"name";s:5:"image";s:4:"slug";s:5:"image";s:5:"count";s:3:"983";}s:5:"links";a:3:{s:4:"name";s:5:"links";s:4:"slug";s:5:"links";s:5:"count";s:3:"892";}s:3:"seo";a:3:{s:4:"name";s:3:"seo";s:4:"slug";s:3:"seo";s:5:"count";s:3:"836";}s:8:"facebook";a:3:{s:4:"name";s:8:"Facebook";s:4:"slug";s:8:"facebook";s:5:"count";s:3:"826";}s:9:"shortcode";a:3:{s:4:"name";s:9:"shortcode";s:4:"slug";s:9:"shortcode";s:5:"count";s:3:"767";}s:9:"wordpress";a:3:{s:4:"name";s:9:"wordpress";s:4:"slug";s:9:"wordpress";s:5:"count";s:3:"724";}s:7:"gallery";a:3:{s:4:"name";s:7:"gallery";s:4:"slug";s:7:"gallery";s:5:"count";s:3:"719";}s:6:"social";a:3:{s:4:"name";s:6:"social";s:4:"slug";s:6:"social";s:5:"count";s:3:"665";}s:3:"rss";a:3:{s:4:"name";s:3:"rss";s:4:"slug";s:3:"rss";s:5:"count";s:3:"664";}s:5:"pages";a:3:{s:4:"name";s:5:"pages";s:4:"slug";s:5:"pages";s:5:"count";s:3:"617";}s:7:"widgets";a:3:{s:4:"name";s:7:"widgets";s:4:"slug";s:7:"widgets";s:5:"count";s:3:"613";}s:6:"jquery";a:3:{s:4:"name";s:6:"jquery";s:4:"slug";s:6:"jquery";s:5:"count";s:3:"593";}s:4:"ajax";a:3:{s:4:"name";s:4:"AJAX";s:4:"slug";s:4:"ajax";s:5:"count";s:3:"573";}s:5:"email";a:3:{s:4:"name";s:5:"email";s:4:"slug";s:5:"email";s:5:"count";s:3:"524";}s:5:"media";a:3:{s:4:"name";s:5:"media";s:4:"slug";s:5:"media";s:5:"count";s:3:"503";}s:10:"buddypress";a:3:{s:4:"name";s:10:"buddypress";s:4:"slug";s:10:"buddypress";s:5:"count";s:3:"498";}s:10:"javascript";a:3:{s:4:"name";s:10:"javascript";s:4:"slug";s:10:"javascript";s:5:"count";s:3:"496";}s:5:"video";a:3:{s:4:"name";s:5:"video";s:4:"slug";s:5:"video";s:5:"count";s:3:"490";}s:4:"feed";a:3:{s:4:"name";s:4:"feed";s:4:"slug";s:4:"feed";s:5:"count";s:3:"471";}s:5:"photo";a:3:{s:4:"name";s:5:"photo";s:4:"slug";s:5:"photo";s:5:"count";s:3:"466";}s:7:"content";a:3:{s:4:"name";s:7:"content";s:4:"slug";s:7:"content";s:5:"count";s:3:"444";}s:6:"photos";a:3:{s:4:"name";s:6:"photos";s:4:"slug";s:6:"photos";s:5:"count";s:3:"441";}s:4:"link";a:3:{s:4:"name";s:4:"link";s:4:"slug";s:4:"link";s:5:"count";s:3:"432";}s:8:"category";a:3:{s:4:"name";s:8:"category";s:4:"slug";s:8:"category";s:5:"count";s:3:"404";}s:4:"spam";a:3:{s:4:"name";s:4:"spam";s:4:"slug";s:4:"spam";s:5:"count";s:3:"401";}s:5:"stats";a:3:{s:4:"name";s:5:"stats";s:4:"slug";s:5:"stats";s:5:"count";s:3:"399";}s:5:"flash";a:3:{s:4:"name";s:5:"flash";s:4:"slug";s:5:"flash";s:5:"count";s:3:"383";}s:7:"youtube";a:3:{s:4:"name";s:7:"youtube";s:4:"slug";s:7:"youtube";s:5:"count";s:3:"382";}s:7:"comment";a:3:{s:4:"name";s:7:"comment";s:4:"slug";s:7:"comment";s:5:"count";s:3:"378";}}', 'yes'),
+(311, 'su_custom_css', '', 'yes'),
+(312, 'widget_jetpack-post-views-widget', 'a:2:{i:2;a:5:{s:5:"title";s:18:"Most Popular Posts";s:10:"show_views";s:0:"";s:4:"days";s:2:"-1";s:13:"exclude_posts";s:0:"";s:9:"num_posts";i:5;}s:12:"_multiwidget";i:1;}', 'yes'),
+(313, 'widget_newsplus-mini-folio', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
+(314, '_site_transient_update_plugins', 'O:8:"stdClass":3:{s:12:"last_checked";i:1363792690;s:7:"checked";a:7:{s:19:"akismet/akismet.php";s:5:"2.5.7";s:9:"hello.php";s:3:"1.6";s:19:"jetpack/jetpack.php";s:3:"2.2";s:41:"jetpack-post-views/jetpack-post-views.php";s:5:"1.0.4";s:43:"recent-posts-slider/recent-posts-slider.php";s:5:"0.7.1";s:43:"shortcodes-ultimate/shortcodes-ultimate.php";s:5:"3.9.5";s:44:"wp-live-server-deploy/live-server-deploy.php";s:3:"1.2";}s:8:"response";a:0:{}}', 'yes'),
+(315, 'rps_width', '660', 'yes'),
+(316, 'rps_height', '250', 'yes'),
+(317, 'rps_post_per_slide', '1', 'yes'),
+(318, 'rps_total_posts', '6', 'yes'),
+(319, 'rps_slider_content', '3', 'yes'),
+(320, 'rps_category_ids', '', 'yes'),
+(321, 'rps_post_include_ids', '', 'yes'),
+(322, 'rps_post_exclude_ids', '', 'yes'),
+(323, 'rps_post_title_color', '', 'yes'),
+(324, 'rps_post_title_bg_color', '', 'yes'),
+(325, 'rps_slider_speed', '8', 'yes'),
+(326, 'rps_pagination_style', '3', 'yes'),
+(327, 'rps_excerpt_words', '', 'yes'),
+(328, 'rps_keep_excerpt_tags', '', 'yes'),
+(329, 'rps_link_text', '', 'yes'),
+(330, 'rps_show_post_date', '', 'yes'),
+(331, 'rps_post_date_text', '', 'yes'),
+(332, 'rps_post_date_format', '', 'yes'),
+(333, 'rps_custom_css', '', 'yes');
 
 -- --------------------------------------------------------
 
@@ -418,6 +437,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 -- Table structure for table `wp_postmeta`
 --
 
+DROP TABLE IF EXISTS `wp_postmeta`;
 CREATE TABLE IF NOT EXISTS `wp_postmeta` (
   `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `post_id` bigint(20) unsigned NOT NULL DEFAULT '0',
@@ -426,7 +446,7 @@ CREATE TABLE IF NOT EXISTS `wp_postmeta` (
   PRIMARY KEY (`meta_id`),
   KEY `post_id` (`post_id`),
   KEY `meta_key` (`meta_key`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=47 ;
 
 --
 -- Dumping data for table `wp_postmeta`
@@ -434,28 +454,27 @@ CREATE TABLE IF NOT EXISTS `wp_postmeta` (
 
 INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUES
 (1, 2, '_wp_page_template', 'default'),
-(2, 8, '_wp_attached_file', '2013/03/themeforest-4208250-newsplus-magazineeditorial-wordpress-theme_4.zip'),
-(3, 8, '_wp_attachment_context', 'upgrader'),
-(4, 9, '_wp_attached_file', '2013/03/newsplus.rar'),
-(5, 9, '_wp_attachment_context', 'upgrader'),
 (8, 11, '_edit_last', '1'),
-(9, 11, '_edit_lock', '1363787245:1'),
+(9, 11, '_edit_lock', '1363790627:1'),
 (10, 12, '_wp_attached_file', '2013/03/iyop1.jpg'),
 (11, 12, '_wp_attachment_metadata', 'a:5:{s:5:"width";i:960;s:6:"height";i:640;s:4:"file";s:17:"2013/03/iyop1.jpg";s:5:"sizes";a:10:{s:9:"thumbnail";a:4:{s:4:"file";s:17:"iyop1-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";}s:6:"medium";a:4:{s:4:"file";s:17:"iyop1-300x200.jpg";s:5:"width";i:300;s:6:"height";i:200;s:9:"mime-type";s:10:"image/jpeg";}s:14:"post-thumbnail";a:4:{s:4:"file";s:17:"iyop1-800x533.jpg";s:5:"width";i:800;s:6:"height";i:533;s:9:"mime-type";s:10:"image/jpeg";}s:18:"posts_slider_thumb";a:4:{s:4:"file";s:17:"iyop1-900x600.jpg";s:5:"width";i:900;s:6:"height";i:600;s:9:"mime-type";s:10:"image/jpeg";}s:13:"two_col_thumb";a:4:{s:4:"file";s:17:"iyop1-800x533.jpg";s:5:"width";i:800;s:6:"height";i:533;s:9:"mime-type";s:10:"image/jpeg";}s:15:"three_col_thumb";a:4:{s:4:"file";s:17:"iyop1-800x533.jpg";s:5:"width";i:800;s:6:"height";i:533;s:9:"mime-type";s:10:"image/jpeg";}s:14:"list_big_thumb";a:4:{s:4:"file";s:17:"iyop1-800x533.jpg";s:5:"width";i:800;s:6:"height";i:533;s:9:"mime-type";s:10:"image/jpeg";}s:16:"list_small_thumb";a:4:{s:4:"file";s:17:"iyop1-370x246.jpg";s:5:"width";i:370;s:6:"height";i:246;s:9:"mime-type";s:10:"image/jpeg";}s:19:"related_posts_thumb";a:4:{s:4:"file";s:17:"iyop1-370x246.jpg";s:5:"width";i:370;s:6:"height";i:246;s:9:"mime-type";s:10:"image/jpeg";}s:15:"minifolio_thumb";a:4:{s:4:"file";s:17:"iyop1-370x246.jpg";s:5:"width";i:370;s:6:"height";i:246;s:9:"mime-type";s:10:"image/jpeg";}}s:10:"image_meta";a:10:{s:8:"aperture";i:0;s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";i:0;s:9:"copyright";s:0:"";s:12:"focal_length";i:0;s:3:"iso";i:0;s:13:"shutter_speed";i:0;s:5:"title";s:0:"";}}'),
 (12, 11, '_thumbnail_id', '12'),
 (13, 11, 'post_options', 'a:5:{s:8:"sb_usage";s:15:"default-sidebar";s:9:"hwa_usage";s:17:"default-headerbar";s:8:"pf_video";s:0:"";s:8:"ad_above";s:0:"";s:8:"ad_below";s:0:"";}'),
 (14, 11, 'page_options', 'a:2:{s:8:"sb_usage";s:15:"default-sidebar";s:9:"hwa_usage";s:17:"default-headerbar";}'),
-(15, 11, '_pingme', '1'),
-(16, 11, '_encloseme', '1'),
 (17, 15, '_edit_last', '1'),
-(18, 15, '_edit_lock', '1363787968:1'),
+(18, 15, '_edit_lock', '1363790555:1'),
 (19, 16, '_wp_attached_file', '2013/03/iyop2.jpg'),
 (20, 16, '_wp_attachment_metadata', 'a:5:{s:5:"width";i:309;s:6:"height";i:206;s:4:"file";s:17:"2013/03/iyop2.jpg";s:5:"sizes";a:2:{s:9:"thumbnail";a:4:{s:4:"file";s:17:"iyop2-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";}s:6:"medium";a:4:{s:4:"file";s:17:"iyop2-300x200.jpg";s:5:"width";i:300;s:6:"height";i:200;s:9:"mime-type";s:10:"image/jpeg";}}s:10:"image_meta";a:10:{s:8:"aperture";i:0;s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";i:0;s:9:"copyright";s:0:"";s:12:"focal_length";i:0;s:3:"iso";i:0;s:13:"shutter_speed";i:0;s:5:"title";s:0:"";}}'),
 (21, 15, '_thumbnail_id', '16'),
 (22, 15, 'post_options', 'a:5:{s:8:"sb_usage";s:15:"default-sidebar";s:9:"hwa_usage";s:17:"default-headerbar";s:8:"pf_video";s:0:"";s:8:"ad_above";s:0:"";s:8:"ad_below";s:0:"";}'),
 (23, 15, 'page_options', 'a:2:{s:8:"sb_usage";s:15:"default-sidebar";s:9:"hwa_usage";s:17:"default-headerbar";}'),
-(24, 15, '_pingme', '1'),
-(25, 15, '_encloseme', '1');
+(26, 1, '_wp_trash_meta_status', 'publish'),
+(27, 1, '_wp_trash_meta_time', '1363790344'),
+(28, 1, '_wp_trash_meta_comments_status', 'a:1:{i:1;s:1:"1";}'),
+(43, 15, '_rps_img_src', '/inter/wp-content/uploads/2013/03/iyop2-304x196.jpg'),
+(44, 15, '_rps_is_delete_img', '1'),
+(45, 11, '_rps_img_src', '/inter/wp-content/uploads/2013/03/iyop1-304x196.jpg'),
+(46, 11, '_rps_is_delete_img', '1');
 
 -- --------------------------------------------------------
 
@@ -463,6 +482,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 -- Table structure for table `wp_posts`
 --
 
+DROP TABLE IF EXISTS `wp_posts`;
 CREATE TABLE IF NOT EXISTS `wp_posts` (
   `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `post_author` bigint(20) unsigned NOT NULL DEFAULT '0',
@@ -492,29 +512,32 @@ CREATE TABLE IF NOT EXISTS `wp_posts` (
   KEY `type_status_date` (`post_type`,`post_status`,`post_date`,`ID`),
   KEY `post_parent` (`post_parent`),
   KEY `post_author` (`post_author`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
 
 --
 -- Dumping data for table `wp_posts`
 --
 
 INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post_content`, `post_title`, `post_excerpt`, `post_status`, `comment_status`, `ping_status`, `post_password`, `post_name`, `to_ping`, `pinged`, `post_modified`, `post_modified_gmt`, `post_content_filtered`, `post_parent`, `guid`, `menu_order`, `post_type`, `post_mime_type`, `comment_count`) VALUES
-(1, 1, '2013-03-20 10:40:55', '2013-03-20 10:40:55', 'Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!', 'Hello world!', '', 'publish', 'open', 'open', '', 'hello-world', '', '', '2013-03-20 10:40:55', '2013-03-20 10:40:55', '', 0, 'http://localhost/inter/?p=1', 0, 'post', '', 1),
+(1, 1, '2013-03-20 10:40:55', '2013-03-20 10:40:55', 'Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!', 'Hello world!', '', 'trash', 'open', 'open', '', 'hello-world', '', '', '2013-03-20 14:39:04', '2013-03-20 14:39:04', '', 0, 'http://localhost/inter/?p=1', 0, 'post', '', 1),
 (2, 1, '2013-03-20 10:40:55', '2013-03-20 10:40:55', 'This is an example page. It''s different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:\n\n<blockquote>Hi there! I''m a bike messenger by day, aspiring actor by night, and this is my blog. I live in Los Angeles, have a great dog named Jack, and I like pi&#241;a coladas. (And gettin'' caught in the rain.)</blockquote>\n\n...or something like this:\n\n<blockquote>The XYZ Doohickey Company was founded in 1971, and has been providing quality doohickeys to the public ever since. Located in Gotham City, XYZ employs over 2,000 people and does all kinds of awesome things for the Gotham community.</blockquote>\n\nAs a new WordPress user, you should go to <a href="http://localhost/inter/wp-admin/">your dashboard</a> to delete this page and create new pages for your content. Have fun!', 'Sample Page', '', 'publish', 'open', 'open', '', 'sample-page', '', '', '2013-03-20 10:40:55', '2013-03-20 10:40:55', '', 0, 'http://localhost/inter/?page_id=2', 0, 'page', '', 0),
 (3, 1, '2013-03-20 10:41:33', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'open', 'open', '', '', '', '', '2013-03-20 10:41:33', '0000-00-00 00:00:00', '', 0, 'http://localhost/inter/?p=3', 0, 'post', '', 0),
 (5, 1, '2013-03-20 11:25:04', '0000-00-00 00:00:00', '', 'Misc Logo Path', '', 'draft', 'closed', 'closed', '', 'misc_logo_path', '', '', '2013-03-20 11:25:04', '0000-00-00 00:00:00', '', 0, 'http://localhost/inter/?post_type=wpzoom&p=5', 0, 'wpzoom', '', 0),
 (6, 1, '2013-03-20 11:25:04', '0000-00-00 00:00:00', '', 'Misc Favicon', '', 'draft', 'closed', 'closed', '', 'misc_favicon', '', '', '2013-03-20 11:25:04', '0000-00-00 00:00:00', '', 0, 'http://localhost/inter/?post_type=wpzoom&p=6', 0, 'wpzoom', '', 0),
 (7, 1, '2013-03-20 11:25:04', '0000-00-00 00:00:00', '', 'Ad Content Imgpath', '', 'draft', 'closed', 'closed', '', 'ad_content_imgpath', '', '', '2013-03-20 11:25:04', '0000-00-00 00:00:00', '', 0, 'http://localhost/inter/?post_type=wpzoom&p=7', 0, 'wpzoom', '', 0),
-(8, 1, '2013-03-20 11:57:54', '2013-03-20 11:57:54', 'http://localhost/inter/wp-content/uploads/2013/03/themeforest-4208250-newsplus-magazineeditorial-wordpress-theme_4.zip', 'themeforest-4208250-newsplus-magazineeditorial-wordpress-theme_4.zip', '', 'private', 'open', 'open', '', 'themeforest-4208250-newsplus-magazineeditorial-wordpress-theme_4-zip', '', '', '2013-03-20 11:57:54', '2013-03-20 11:57:54', '', 0, 'http://localhost/inter/wp-content/uploads/2013/03/themeforest-4208250-newsplus-magazineeditorial-wordpress-theme_4.zip', 0, 'attachment', '', 0),
-(9, 1, '2013-03-20 12:00:54', '2013-03-20 12:00:54', 'http://localhost/inter/wp-content/uploads/2013/03/newsplus.rar', 'newsplus.rar', '', 'private', 'open', 'open', '', 'newsplus-rar', '', '', '2013-03-20 12:00:54', '2013-03-20 12:00:54', '', 0, 'http://localhost/inter/wp-content/uploads/2013/03/newsplus.rar', 0, 'attachment', '', 0),
-(11, 1, '2013-03-20 13:43:25', '2013-03-20 13:43:25', 'After the Benedicto Kiwanuka Memorial Lecture, the Organising Committee of the Benedicto Kiwanuka Golden Jubilee Memorial Activities invites you with pleasure to the Benedicto Kiwanuka Golden Jubilee Memorial Mass intended to pray for a successful search and exhumation of his remains. The Mass will be celebrated by His Eminence Emmanuel Cardinal Wamala and with Msgr. Gerald Kalumba as Co-celebrant on Wednesday 05th.Dec.2012 starting 01:30pm at Christ the King Church Kampala.\r\nR.S.V.P:\r\nHon. Muwanga Kivumbi 0772388354\r\nMr. Jude Mbabaali 0772444663\r\nMr. Elvis Kintu Nsonyi 0704682750', 'Test', '', 'publish', 'open', 'open', '', 'test', '', '', '2013-03-20 13:43:25', '2013-03-20 13:43:25', '', 0, 'http://localhost/inter/?p=11', 0, 'post', '', 0),
+(11, 1, '2013-03-20 13:43:25', '2013-03-20 13:43:25', 'After the Benedicto Kiwanuka Memorial Lecture, the Organising Committee of the Benedicto Kiwanuka Golden Jubilee Memorial Activities invites you with pleasure to the Benedicto Kiwanuka Golden Jubilee Memorial Mass, intended to pray for a successful search and exhumation of his remains. The Mass will be celebrated by His Eminence Emmanuel Cardinal Wamala and with Msgr. Gerald Kalumba as Co-celebrant on Wednesday 05th.Dec.2012 starting 01:30pm at Christ the King Church Kampala.\r\nR.S.V.P:\r\nHon. Muwanga Kivumbi 0772388354\r\nMr. Jude Mbabaali 0772444663\r\nMr. Elvis Kintu Nsonyi 0704682750', 'Test', '', 'publish', 'open', 'open', '', 'test', '', '', '2013-03-20 14:45:26', '2013-03-20 14:45:26', '', 0, 'http://localhost/inter/?p=11', 0, 'post', '', 0),
 (12, 1, '2013-03-20 13:42:45', '2013-03-20 13:42:45', '', 'iyop1', '', 'inherit', 'open', 'open', '', 'iyop1', '', '', '2013-03-20 13:42:45', '2013-03-20 13:42:45', '', 11, 'http://localhost/inter/wp-content/uploads/2013/03/iyop1.jpg', 0, 'attachment', 'image/jpeg', 0),
 (13, 1, '2013-03-20 13:42:56', '2013-03-20 13:42:56', 'After the Benedicto Kiwanuka Memorial Lecture, the Organising Committee of the Benedicto Kiwanuka Golden Jubilee Memorial Activities invites you with pleasure to the Benedicto Kiwanuka Golden Jubilee Memorial Mass intended to pray for a successful search and exhumation of his remains. The Mass will be celebrated by His Eminence Emmanuel Cardinal Wamala and with Msgr. Gerald Kalumba as Co-celebrant on Wednesday 05th.Dec.2012 starting 01:30pm at Christ the King Church Kampala.\nR.S.V.P:\nHon. Muwanga Kivumbi 0772388354\nMr. Jude Mbabaali 0772444663\nMr. Elvis Kintu Nsonyi 0704682750', 'Test', '', 'inherit', 'open', 'open', '', '11-revision', '', '', '2013-03-20 13:42:56', '2013-03-20 13:42:56', '', 11, 'http://localhost/inter/?p=13', 0, 'revision', '', 0),
 (14, 1, '2013-03-20 13:44:27', '2013-03-20 13:44:27', 'After the Benedicto Kiwanuka Memorial Lecture, the Organising Committee of the Benedicto Kiwanuka Golden Jubilee Memorial Activities invites you with pleasure to the Benedicto Kiwanuka Golden Jubilee Memorial Mass intended to pray for a successful search and exhumation of his remains. The Mass will be celebrated by His Eminence Emmanuel Cardinal Wamala and with Msgr. Gerald Kalumba as Co-celebrant on Wednesday 05th.Dec.2012 starting 01:30pm at Christ the King Church Kampala.\nR.S.V.P:\nHon. Muwanga Kivumbi 0772388354\nMr. Jude Mbabaali 0772444663\nMr. Elvis Kintu Nsonyi 0704682750', 'Test', '', 'inherit', 'open', 'open', '', '11-autosave', '', '', '2013-03-20 13:44:27', '2013-03-20 13:44:27', '', 11, 'http://localhost/inter/?p=14', 0, 'revision', '', 0),
-(15, 1, '2013-03-20 13:59:39', '2013-03-20 13:59:39', 'We at Interparty Youth Platform we are praying for peace in Kenya and Transparency. We pray a God given leader is sworn in as the 4th President we should keep praying for our brothers and sisters in Kenya to resist any kind of violence and blood shed. So life is sacred so it should be protected at whatever level. Daniel Tulibagenyi Chairman IYOP.', 'we are praying for peace in Kenya', '', 'publish', 'open', 'open', '', 'we-are-praying-for-peace-in-kenya', '', '', '2013-03-20 13:59:39', '2013-03-20 13:59:39', '', 0, 'http://localhost/inter/?p=15', 0, 'post', '', 0),
+(15, 1, '2013-03-20 13:59:39', '2013-03-20 13:59:39', 'We at Interparty Youth Platform are praying for peace and transparency in Kenya. We pray a God-given leader is sworn in as the 4th President. We should keep praying for our brothers and sisters in Kenya to resist any kind of violence and blood shed. Life is sacred so it should be protected at whatever level.\r\n\r\nDaniel Tulibagenyi Chairman IYOP.', 'We are praying for peace in Kenya', '', 'publish', 'open', 'open', '', 'we-are-praying-for-peace-in-kenya', '', '', '2013-03-20 14:44:21', '2013-03-20 14:44:21', '', 0, 'http://localhost/inter/?p=15', 0, 'post', '', 0),
 (16, 1, '2013-03-20 13:59:31', '2013-03-20 13:59:31', '', 'iyop2', '', 'inherit', 'open', 'open', '', 'iyop2', '', '', '2013-03-20 13:59:31', '2013-03-20 13:59:31', '', 15, 'http://localhost/inter/wp-content/uploads/2013/03/iyop2.jpg', 0, 'attachment', 'image/jpeg', 0),
 (17, 1, '2013-03-20 13:58:23', '2013-03-20 13:58:23', 'We at Interparty Youth Platform we are praying for peace in Kenya and Transparency. We pray a God given leader is sworn in as the 4th President we should keep praying for our brothers and sisters in Kenya to resist any kind of violence and blood shed. So life is sacred so it should be protected at whatever level. Daniel Tulibagenyi Chairman IYOP.', 'we are praying for peace in Kenya', '', 'inherit', 'open', 'open', '', '15-revision', '', '', '2013-03-20 13:58:23', '2013-03-20 13:58:23', '', 15, 'http://localhost/inter/?p=17', 0, 'revision', '', 0),
-(18, 1, '2013-03-20 14:00:40', '2013-03-20 14:00:40', 'We at Interparty Youth Platform we are praying for peace in Kenya and Transparency. We pray a God given leader is sworn in as the 4th President we should keep praying for our brothers and sisters in Kenya to resist any kind of violence and blood shed. So life is sacred so it should be protected at whatever level. Daniel Tulibagenyi Chairman IYOP.', 'we are praying for peace in Kenya', '', 'inherit', 'open', 'open', '', '15-autosave', '', '', '2013-03-20 14:00:40', '2013-03-20 14:00:40', '', 15, 'http://localhost/inter/?p=18', 0, 'revision', '', 0);
+(18, 1, '2013-03-20 14:42:06', '2013-03-20 14:42:06', 'We at Interparty Youth Platform are praying for peace and transparency in Kenya. We pray a God-given leader is sworn in as the 4th President. We should keep praying for our brothers and sisters in Kenya to resist any kind of violence and blood shed. Life is sacred so it should be protected at whatever level.\n\nDaniel Tulibagenyi Chairman IYOP.', 'we are praying for peace in Kenya', '', 'inherit', 'open', 'open', '', '15-autosave', '', '', '2013-03-20 14:42:06', '2013-03-20 14:42:06', '', 15, 'http://localhost/inter/?p=18', 0, 'revision', '', 0),
+(19, 1, '2013-03-20 10:40:55', '2013-03-20 10:40:55', 'Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!', 'Hello world!', '', 'inherit', 'open', 'open', '', '1-revision', '', '', '2013-03-20 10:40:55', '2013-03-20 10:40:55', '', 1, 'http://localhost/inter/?p=19', 0, 'revision', '', 0),
+(20, 1, '2013-03-20 13:59:39', '2013-03-20 13:59:39', 'We at Interparty Youth Platform we are praying for peace in Kenya and Transparency. We pray a God given leader is sworn in as the 4th President we should keep praying for our brothers and sisters in Kenya to resist any kind of violence and blood shed. So life is sacred so it should be protected at whatever level. Daniel Tulibagenyi Chairman IYOP.', 'we are praying for peace in Kenya', '', 'inherit', 'open', 'open', '', '15-revision-2', '', '', '2013-03-20 13:59:39', '2013-03-20 13:59:39', '', 15, 'http://localhost/inter/?p=20', 0, 'revision', '', 0),
+(21, 1, '2013-03-20 14:41:02', '2013-03-20 14:41:02', 'We at Interparty Youth Platform are praying for peace and transparency in Kenya. We pray a God-given leader is sworn in as the 4th President. We should keep praying for our brothers and sisters in Kenya to resist any kind of violence and blood shed. Life is sacred so it should be protected at whatever level.\r\n\r\nDaniel Tulibagenyi Chairman IYOP.', 'we are praying for peace in Kenya', '', 'inherit', 'open', 'open', '', '15-revision-3', '', '', '2013-03-20 14:41:02', '2013-03-20 14:41:02', '', 15, 'http://localhost/inter/?p=21', 0, 'revision', '', 0),
+(22, 1, '2013-03-20 14:43:25', '2013-03-20 14:43:25', 'We at Interparty Youth Platform are praying for peace and transparency in Kenya. We pray a God-given leader is sworn in as the 4th President. We should keep praying for our brothers and sisters in Kenya to resist any kind of violence and blood shed. Life is sacred so it should be protected at whatever level.\r\n\r\nDaniel Tulibagenyi Chairman IYOP.', 'We are praying for peace in Kenya', '', 'inherit', 'open', 'open', '', '15-revision-4', '', '', '2013-03-20 14:43:25', '2013-03-20 14:43:25', '', 15, 'http://localhost/inter/?p=22', 0, 'revision', '', 0),
+(23, 1, '2013-03-20 13:43:25', '2013-03-20 13:43:25', 'After the Benedicto Kiwanuka Memorial Lecture, the Organising Committee of the Benedicto Kiwanuka Golden Jubilee Memorial Activities invites you with pleasure to the Benedicto Kiwanuka Golden Jubilee Memorial Mass intended to pray for a successful search and exhumation of his remains. The Mass will be celebrated by His Eminence Emmanuel Cardinal Wamala and with Msgr. Gerald Kalumba as Co-celebrant on Wednesday 05th.Dec.2012 starting 01:30pm at Christ the King Church Kampala.\r\nR.S.V.P:\r\nHon. Muwanga Kivumbi 0772388354\r\nMr. Jude Mbabaali 0772444663\r\nMr. Elvis Kintu Nsonyi 0704682750', 'Test', '', 'inherit', 'open', 'open', '', '11-revision-2', '', '', '2013-03-20 13:43:25', '2013-03-20 13:43:25', '', 11, 'http://localhost/inter/?p=23', 0, 'revision', '', 0);
 
 -- --------------------------------------------------------
 
@@ -522,6 +545,7 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 -- Table structure for table `wp_terms`
 --
 
+DROP TABLE IF EXISTS `wp_terms`;
 CREATE TABLE IF NOT EXISTS `wp_terms` (
   `term_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(200) NOT NULL DEFAULT '',
@@ -530,14 +554,16 @@ CREATE TABLE IF NOT EXISTS `wp_terms` (
   PRIMARY KEY (`term_id`),
   UNIQUE KEY `slug` (`slug`),
   KEY `name` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `wp_terms`
 --
 
 INSERT INTO `wp_terms` (`term_id`, `name`, `slug`, `term_group`) VALUES
-(1, 'Uncategorized', 'uncategorized', 0);
+(1, 'Uncategorized', 'uncategorized', 0),
+(6, 'News', 'news', 0),
+(7, 'Main_nav', 'main_nav', 0);
 
 -- --------------------------------------------------------
 
@@ -545,6 +571,7 @@ INSERT INTO `wp_terms` (`term_id`, `name`, `slug`, `term_group`) VALUES
 -- Table structure for table `wp_term_relationships`
 --
 
+DROP TABLE IF EXISTS `wp_term_relationships`;
 CREATE TABLE IF NOT EXISTS `wp_term_relationships` (
   `object_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `term_taxonomy_id` bigint(20) unsigned NOT NULL DEFAULT '0',
@@ -559,8 +586,8 @@ CREATE TABLE IF NOT EXISTS `wp_term_relationships` (
 
 INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_order`) VALUES
 (1, 1, 0),
-(11, 1, 0),
-(15, 1, 0);
+(11, 6, 0),
+(15, 6, 0);
 
 -- --------------------------------------------------------
 
@@ -568,6 +595,7 @@ INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_orde
 -- Table structure for table `wp_term_taxonomy`
 --
 
+DROP TABLE IF EXISTS `wp_term_taxonomy`;
 CREATE TABLE IF NOT EXISTS `wp_term_taxonomy` (
   `term_taxonomy_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `term_id` bigint(20) unsigned NOT NULL DEFAULT '0',
@@ -578,14 +606,16 @@ CREATE TABLE IF NOT EXISTS `wp_term_taxonomy` (
   PRIMARY KEY (`term_taxonomy_id`),
   UNIQUE KEY `term_id_taxonomy` (`term_id`,`taxonomy`),
   KEY `taxonomy` (`taxonomy`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `wp_term_taxonomy`
 --
 
 INSERT INTO `wp_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `description`, `parent`, `count`) VALUES
-(1, 1, 'category', '', 0, 3);
+(1, 1, 'category', '', 0, 0),
+(6, 6, 'category', '', 0, 2),
+(7, 7, 'nav_menu', '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -593,6 +623,7 @@ INSERT INTO `wp_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `desc
 -- Table structure for table `wp_usermeta`
 --
 
+DROP TABLE IF EXISTS `wp_usermeta`;
 CREATE TABLE IF NOT EXISTS `wp_usermeta` (
   `umeta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` bigint(20) unsigned NOT NULL DEFAULT '0',
@@ -624,9 +655,9 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 (14, 1, 'wp_dashboard_quick_press_last_post_id', '3'),
 (15, 1, 'managenav-menuscolumnshidden', 'a:4:{i:0;s:11:"link-target";i:1;s:11:"css-classes";i:2;s:3:"xfn";i:3;s:11:"description";}'),
 (16, 1, 'metaboxhidden_nav-menus', 'a:3:{i:0;s:8:"add-post";i:1;s:12:"add-post_tag";i:2;s:15:"add-post_format";}'),
-(17, 1, 'wp_user-settings', 'libraryContent=browse'),
-(18, 1, 'wp_user-settings-time', '1363787001'),
-(19, 1, 'nav_menu_recently_edited', '5');
+(17, 1, 'wp_user-settings', 'libraryContent=browse&editor=tinymce'),
+(18, 1, 'wp_user-settings-time', '1363790658'),
+(19, 1, 'nav_menu_recently_edited', '7');
 
 -- --------------------------------------------------------
 
@@ -634,6 +665,7 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 -- Table structure for table `wp_users`
 --
 
+DROP TABLE IF EXISTS `wp_users`;
 CREATE TABLE IF NOT EXISTS `wp_users` (
   `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `user_login` varchar(60) NOT NULL DEFAULT '',
@@ -656,3 +688,7 @@ CREATE TABLE IF NOT EXISTS `wp_users` (
 
 INSERT INTO `wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_email`, `user_url`, `user_registered`, `user_activation_key`, `user_status`, `display_name`) VALUES
 (1, 'admin', '$P$BPettnYx1OlFQnhkkr5uAst.oVYcRd0', 'admin', 'enoswakoko@gmail.com', '', '2013-03-20 10:40:55', '', 0, 'admin');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
