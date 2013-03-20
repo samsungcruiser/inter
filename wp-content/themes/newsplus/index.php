@@ -6,7 +6,6 @@
 global $pls_archive_template;
 get_header(); ?>
 <div id="primary" class="site-content">
-	<?php if (function_exists('rps_show')) echo rps_show(); ?>
     <div id="content" role="main">
 		<?php show_breadcrumbs();
 		if ( 'list-style' == $pls_archive_template )

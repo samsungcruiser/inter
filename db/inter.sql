@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 20, 2013 at 03:29 PM
+-- Generation Time: Mar 20, 2013 at 06:23 PM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.4.3
 
@@ -113,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `wp_options` (
   `autoload` varchar(20) NOT NULL DEFAULT 'yes',
   PRIMARY KEY (`option_id`),
   UNIQUE KEY `option_name` (`option_name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=334 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=339 ;
 
 --
 -- Dumping data for table `wp_options`
@@ -154,7 +154,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (32, 'hack_file', '0', 'yes'),
 (33, 'blog_charset', 'UTF-8', 'yes'),
 (34, 'moderation_keys', '', 'no'),
-(35, 'active_plugins', 'a:5:{i:0;s:41:"jetpack-post-views/jetpack-post-views.php";i:1;s:19:"jetpack/jetpack.php";i:2;s:43:"recent-posts-slider/recent-posts-slider.php";i:3;s:43:"shortcodes-ultimate/shortcodes-ultimate.php";i:4;s:44:"wp-live-server-deploy/live-server-deploy.php";}', 'yes'),
+(35, 'active_plugins', 'a:3:{i:0;s:41:"jetpack-post-views/jetpack-post-views.php";i:1;s:19:"jetpack/jetpack.php";i:4;s:44:"wp-live-server-deploy/live-server-deploy.php";}', 'yes'),
 (36, 'home', 'http://localhost/inter', 'yes'),
 (37, 'category_base', '', 'yes'),
 (38, 'ping_sites', 'http://rpc.pingomatic.com/', 'yes'),
@@ -176,7 +176,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (54, 'upload_path', '', 'yes'),
 (55, 'blog_public', '1', 'yes'),
 (56, 'default_link_category', '2', 'yes'),
-(57, 'show_on_front', 'posts', 'yes'),
+(57, 'show_on_front', 'page', 'yes'),
 (58, 'tag_base', '', 'yes'),
 (59, 'show_avatars', '1', 'yes'),
 (60, 'avatar_rating', 'G', 'yes'),
@@ -207,7 +207,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (85, 'uninstall_plugins', 'a:0:{}', 'no'),
 (86, 'timezone_string', '', 'yes'),
 (87, 'page_for_posts', '0', 'yes'),
-(88, 'page_on_front', '0', 'yes'),
+(88, 'page_on_front', '27', 'yes'),
 (89, 'default_post_format', '0', 'yes'),
 (90, 'link_manager_enabled', '0', 'yes'),
 (91, 'initial_db_version', '22441', 'yes'),
@@ -218,7 +218,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (96, 'widget_archives', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
 (97, 'widget_meta', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
 (98, 'sidebars_widgets', 'a:8:{s:19:"wp_inactive_widgets";a:1:{i:0;s:27:"jetpack-post-views-widget-2";}s:17:"default-headerbar";a:0:{}s:15:"default-sidebar";a:3:{i:0;s:24:"newsplus-popular-posts-2";i:1;s:17:"newsplus-social-2";i:2;s:17:"newsplus-flickr-2";}s:18:"secondary-column-1";a:0:{}s:18:"secondary-column-2";a:0:{}s:18:"secondary-column-3";a:0:{}s:18:"secondary-column-4";a:0:{}s:13:"array_version";i:3;}', 'yes'),
-(99, 'cron', 'a:9:{i:1363795209;a:1:{s:20:"jetpack_clean_nonces";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:6:"hourly";s:4:"args";a:0:{}s:8:"interval";i:3600;}}}i:1363795305;a:1:{s:35:"jetpack_post_views_scheduled_update";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:6:"hourly";s:4:"args";a:0:{}s:8:"interval";i:3600;}}}i:1363798797;a:1:{s:26:"upgrader_scheduled_cleanup";a:1:{s:32:"799be243d6827cc0bc0951691920a50b";a:2:{s:8:"schedule";b:0;s:4:"args";a:1:{i:0;i:24;}}}}i:1363799342;a:1:{s:26:"upgrader_scheduled_cleanup";a:1:{s:32:"2af2e0878689b7c2fa62ccf0765f5768";a:2:{s:8:"schedule";b:0;s:4:"args";a:1:{i:0;i:25;}}}}i:1363799885;a:1:{s:26:"upgrader_scheduled_cleanup";a:1:{s:32:"4334b88fe3501b2f0e4f630eb24f7ca5";a:2:{s:8:"schedule";b:0;s:4:"args";a:1:{i:0;i:26;}}}}i:1363819281;a:3:{s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1363862500;a:1:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1363873315;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}s:7:"version";i:2;}', 'yes'),
+(99, 'cron', 'a:6:{i:1363806009;a:1:{s:20:"jetpack_clean_nonces";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:6:"hourly";s:4:"args";a:0:{}s:8:"interval";i:3600;}}}i:1363806105;a:1:{s:35:"jetpack_post_views_scheduled_update";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:6:"hourly";s:4:"args";a:0:{}s:8:"interval";i:3600;}}}i:1363819281;a:3:{s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1363862500;a:1:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1363873315;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}s:7:"version";i:2;}', 'yes'),
 (101, '_site_transient_update_core', 'O:8:"stdClass":3:{s:7:"updates";a:1:{i:0;O:8:"stdClass":9:{s:8:"response";s:6:"latest";s:8:"download";s:40:"http://wordpress.org/wordpress-3.5.1.zip";s:6:"locale";s:5:"en_US";s:8:"packages";O:8:"stdClass":4:{s:4:"full";s:40:"http://wordpress.org/wordpress-3.5.1.zip";s:10:"no_content";s:51:"http://wordpress.org/wordpress-3.5.1-no-content.zip";s:11:"new_bundled";s:52:"http://wordpress.org/wordpress-3.5.1-new-bundled.zip";s:7:"partial";b:0;}s:7:"current";s:5:"3.5.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"3.5";s:15:"partial_version";s:0:"";}}s:12:"last_checked";i:1363776091;s:15:"version_checked";s:5:"3.5.1";}', 'yes'),
 (106, '_site_transient_timeout_browser_7fd9ea81a2820d1be30701b7cd4a3044', '1364380893', 'yes'),
 (107, '_site_transient_browser_7fd9ea81a2820d1be30701b7cd4a3044', 'a:9:{s:8:"platform";s:7:"Windows";s:4:"name";s:6:"Chrome";s:7:"version";s:13:"25.0.1364.172";s:10:"update_url";s:28:"http://www.google.com/chrome";s:7:"img_src";s:49:"http://s.wordpress.org/images/browsers/chrome.png";s:11:"img_src_ssl";s:48:"https://wordpress.org/images/browsers/chrome.png";s:15:"current_version";s:2:"18";s:7:"upgrade";b:0;s:8:"insecure";b:0;}', 'yes'),
@@ -255,7 +255,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (133, '_transient_timeout_feed_mod_57bc725ad6568758915363af670fd8bc', '1363819300', 'no'),
 (134, '_transient_dash_aa95765b5cc111c56d5993d476b1c2f0', '<div class="rss-widget"><ul><li><a class=''rsswidget'' href=''http://wordpress.tv/2013/03/18/lisa-sabin-wilson-oh-the-themes-youll-do/'' title='' [&hellip;]''>WordPress.tv: Lisa Sabin-Wilson: Oh, The Themes You’ll Do!</a></li><li><a class=''rsswidget'' href=''http://feedproxy.google.com/~r/weblogtoolscollection/UXMP/~3/yiyrwU_8gQQ/'' title=''Cazuela is a neutral colored theme. Ilisa is a clean and minimal theme that can be easily used as a personal portfolio or a business website. Partition has a light, lively, colorful, yet professional and classic appearance. [&hellip;]''>Weblog Tools Collection: WordPress Theme Releases for 3/19</a></li><li><a class=''rsswidget'' href=''http://wordpress.tv/2013/03/18/noah-dyer-growth/'' title='' [&hellip;]''>WordPress.tv: Noah Dyer: Growth</a></li><li><a class=''rsswidget'' href=''http://wordpress.tv/2013/03/18/how-to-install-jetpack-site-stats-on-your-wordpress-site/'' title='' [&hellip;]''>WordPress.tv: How to Install Jetpack Site Stats on your WordPress site</a></li><li><a class=''rsswidget'' href=''http://wptvblog.wordpress.com/2013/03/18/get-involved/'' title=''WordPress.tv is now open for video submissions from the WordPress community. Do you record your WordPress meetup? Submit it to WordPress.tv! Do you record WordPress screencast tutorials? Submit them to WordPress.tv! Do you create some other form of WP video awesomesauce that would benefit the community? WordPress.tv might be just the place for it. Fair warni [&hellip;]''>WordPress.tv Blog: Get Involved!</a></li></ul></div>', 'no'),
 (135, '_transient_feed_mod_57bc725ad6568758915363af670fd8bc', '1363776100', 'no'),
-(136, '_transient_timeout_plugin_slugs', '1363879093', 'no'),
+(136, '_transient_timeout_plugin_slugs', '1363890102', 'no'),
 (137, '_transient_plugin_slugs', 'a:7:{i:0;s:19:"akismet/akismet.php";i:1;s:9:"hello.php";i:2;s:19:"jetpack/jetpack.php";i:3;s:41:"jetpack-post-views/jetpack-post-views.php";i:4;s:43:"recent-posts-slider/recent-posts-slider.php";i:5;s:43:"shortcodes-ultimate/shortcodes-ultimate.php";i:6;s:44:"wp-live-server-deploy/live-server-deploy.php";}', 'no'),
 (138, '_transient_timeout_dash_de3249c4736ad3bd2cd29147c4a0d43e', '1363819300', 'no'),
 (139, '_transient_dash_de3249c4736ad3bd2cd29147c4a0d43e', '<h4>Most Popular</h4>\n<h5><a href=''http://wordpress.org/extend/plugins/ultimate-tinymce/''>Ultimate TinyMCE</a></h5>&nbsp;<span>(<a href=''plugin-install.php?tab=plugin-information&amp;plugin=ultimate-tinymce&amp;_wpnonce=b16b9123fd&amp;TB_iframe=true&amp;width=600&amp;height=800'' class=''thickbox'' title=''Ultimate TinyMCE''>Install</a>)</span>\n<p>Description: Beef up your visual tinymce editor with a plethora of advanced options.</p>\n<h4>Newest Plugins</h4>\n<h5><a href=''http://wordpress.org/extend/plugins/cat-signal/''>Internet Defense League Cat Signal</a></h5>&nbsp;<span>(<a href=''plugin-install.php?tab=plugin-information&amp;plugin=cat-signal&amp;_wpnonce=812d357d50&amp;TB_iframe=true&amp;width=600&amp;height=800'' class=''thickbox'' title=''Internet Defense League Cat Signal''>Install</a>)</span>\n<p>A WordPress plugin to automatically load either the modal or the banner Cat Signal when there is an active campaign from the Internet Defense League.</p>\n', 'no'),
@@ -329,9 +329,9 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (211, 'wpzoom_wpzoom_activated', 'yes', 'yes'),
 (212, 'wpzoom_wpzoom_activated_time', '1363778703', 'yes'),
 (215, '_site_transient_update_themes', 'O:8:"stdClass":3:{s:12:"last_checked";i:1363791297;s:7:"checked";a:4:{s:9:"academica";s:5:"2.0.3";s:8:"newsplus";s:5:"1.0.1";s:12:"twentyeleven";s:3:"1.5";s:12:"twentytwelve";s:3:"1.1";}s:8:"response";a:0:{}}', 'yes'),
-(216, 'theme_mods_newsplus', 'a:7:{i:0;b:0;s:18:"nav_menu_locations";a:2:{s:9:"secondary";i:0;s:7:"primary";i:7;}s:16:"background_color";s:6:"000000";s:16:"background_image";s:0:"";s:17:"background_repeat";s:6:"repeat";s:21:"background_position_x";s:4:"left";s:21:"background_attachment";s:5:"fixed";}', 'yes'),
+(216, 'theme_mods_newsplus', 'a:7:{i:0;b:0;s:18:"nav_menu_locations";a:2:{s:9:"secondary";i:7;s:7:"primary";i:0;}s:16:"background_color";s:6:"000000";s:16:"background_image";s:0:"";s:17:"background_repeat";s:6:"repeat";s:21:"background_position_x";s:4:"left";s:21:"background_attachment";s:5:"fixed";}', 'yes'),
 (217, 'woocommerce_theme_support_check', 'newsplus', 'yes'),
-(218, 'recently_activated', 'a:0:{}', 'yes'),
+(218, 'recently_activated', 'a:2:{s:43:"shortcodes-ultimate/shortcodes-ultimate.php";i:1363803700;s:43:"recent-posts-slider/recent-posts-slider.php";i:1363803694;}', 'yes'),
 (222, '_site_transient_timeout_browser_04b26cd3b65bb2a2becf12a2487638dc', '1364390242', 'yes'),
 (223, '_site_transient_browser_04b26cd3b65bb2a2becf12a2487638dc', 'a:9:{s:8:"platform";s:7:"Windows";s:4:"name";s:7:"Firefox";s:7:"version";s:4:"19.0";s:10:"update_url";s:23:"http://www.firefox.com/";s:7:"img_src";s:50:"http://s.wordpress.org/images/browsers/firefox.png";s:11:"img_src_ssl";s:49:"https://wordpress.org/images/browsers/firefox.png";s:15:"current_version";s:2:"16";s:7:"upgrade";b:0;s:8:"insecure";b:0;}', 'yes'),
 (226, 'pls_layout', 'stretched', 'yes'),
@@ -353,7 +353,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (242, 'pls_ss_tw_usrname', '', 'yes'),
 (243, 'pls_ad_above', '', 'yes'),
 (244, 'pls_ad_below', '', 'yes'),
-(245, 'pls_email', '', 'yes'),
+(245, 'pls_email', 'contact@iyop.ug', 'yes'),
 (246, 'pls_google_map', '', 'yes'),
 (247, 'pls_success_msg', '<h4>Thank You! Your message has been sent.</h4>', 'yes'),
 (248, 'pls_footer_left', '© Interparty Youth platform. All rights reserved.', 'yes'),
@@ -410,7 +410,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (311, 'su_custom_css', '', 'yes'),
 (312, 'widget_jetpack-post-views-widget', 'a:2:{i:2;a:5:{s:5:"title";s:18:"Most Popular Posts";s:10:"show_views";s:0:"";s:4:"days";s:2:"-1";s:13:"exclude_posts";s:0:"";s:9:"num_posts";i:5;}s:12:"_multiwidget";i:1;}', 'yes'),
 (313, 'widget_newsplus-mini-folio', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
-(314, '_site_transient_update_plugins', 'O:8:"stdClass":3:{s:12:"last_checked";i:1363792690;s:7:"checked";a:7:{s:19:"akismet/akismet.php";s:5:"2.5.7";s:9:"hello.php";s:3:"1.6";s:19:"jetpack/jetpack.php";s:3:"2.2";s:41:"jetpack-post-views/jetpack-post-views.php";s:5:"1.0.4";s:43:"recent-posts-slider/recent-posts-slider.php";s:5:"0.7.1";s:43:"shortcodes-ultimate/shortcodes-ultimate.php";s:5:"3.9.5";s:44:"wp-live-server-deploy/live-server-deploy.php";s:3:"1.2";}s:8:"response";a:0:{}}', 'yes'),
+(314, '_site_transient_update_plugins', 'O:8:"stdClass":3:{s:12:"last_checked";i:1363803690;s:7:"checked";a:7:{s:19:"akismet/akismet.php";s:5:"2.5.7";s:9:"hello.php";s:3:"1.6";s:19:"jetpack/jetpack.php";s:3:"2.2";s:41:"jetpack-post-views/jetpack-post-views.php";s:5:"1.0.4";s:43:"recent-posts-slider/recent-posts-slider.php";s:5:"0.7.1";s:43:"shortcodes-ultimate/shortcodes-ultimate.php";s:5:"3.9.5";s:44:"wp-live-server-deploy/live-server-deploy.php";s:3:"1.2";}s:8:"response";a:0:{}}', 'yes'),
 (315, 'rps_width', '660', 'yes'),
 (316, 'rps_height', '250', 'yes'),
 (317, 'rps_post_per_slide', '1', 'yes'),
@@ -446,7 +446,7 @@ CREATE TABLE IF NOT EXISTS `wp_postmeta` (
   PRIMARY KEY (`meta_id`),
   KEY `post_id` (`post_id`),
   KEY `meta_key` (`meta_key`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=47 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=117 ;
 
 --
 -- Dumping data for table `wp_postmeta`
@@ -474,7 +474,72 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (43, 15, '_rps_img_src', '/inter/wp-content/uploads/2013/03/iyop2-304x196.jpg'),
 (44, 15, '_rps_is_delete_img', '1'),
 (45, 11, '_rps_img_src', '/inter/wp-content/uploads/2013/03/iyop1-304x196.jpg'),
-(46, 11, '_rps_is_delete_img', '1');
+(46, 11, '_rps_is_delete_img', '1'),
+(47, 27, '_edit_last', '1'),
+(48, 27, '_edit_lock', '1363803568:1'),
+(49, 27, 'post_options', 'a:2:{s:8:"sb_usage";s:15:"default-sidebar";s:9:"hwa_usage";s:17:"default-headerbar";}'),
+(50, 27, 'page_options', 'a:4:{s:8:"sb_usage";s:15:"default-sidebar";s:9:"hwa_usage";s:17:"default-headerbar";s:8:"category";s:0:"";s:13:"post_per_page";s:0:"";}'),
+(51, 27, '_wp_page_template', 'default'),
+(52, 39, '_edit_last', '1'),
+(53, 39, '_edit_lock', '1363803080:1'),
+(54, 39, 'post_options', 'a:2:{s:8:"sb_usage";s:15:"default-sidebar";s:9:"hwa_usage";s:17:"default-headerbar";}'),
+(55, 39, 'page_options', 'a:4:{s:8:"sb_usage";s:15:"default-sidebar";s:9:"hwa_usage";s:17:"default-headerbar";s:8:"category";s:0:"";s:13:"post_per_page";s:0:"";}'),
+(56, 39, '_wp_page_template', 'templates/page-contact.php'),
+(57, 42, '_menu_item_type', 'post_type'),
+(58, 42, '_menu_item_menu_item_parent', '0'),
+(59, 42, '_menu_item_object_id', '39'),
+(60, 42, '_menu_item_object', 'page'),
+(61, 42, '_menu_item_target', ''),
+(62, 42, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
+(63, 42, '_menu_item_xfn', ''),
+(64, 42, '_menu_item_url', ''),
+(66, 43, '_menu_item_type', 'post_type'),
+(67, 43, '_menu_item_menu_item_parent', '0'),
+(68, 43, '_menu_item_object_id', '27'),
+(69, 43, '_menu_item_object', 'page'),
+(70, 43, '_menu_item_target', ''),
+(71, 43, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
+(72, 43, '_menu_item_xfn', ''),
+(73, 43, '_menu_item_url', ''),
+(75, 44, '_edit_last', '1'),
+(76, 44, '_wp_page_template', 'default'),
+(77, 44, 'post_options', 'a:2:{s:8:"sb_usage";s:15:"default-sidebar";s:9:"hwa_usage";s:17:"default-headerbar";}'),
+(78, 44, 'page_options', 'a:4:{s:8:"sb_usage";s:15:"default-sidebar";s:9:"hwa_usage";s:17:"default-headerbar";s:8:"category";s:0:"";s:13:"post_per_page";s:0:"";}'),
+(79, 44, '_edit_lock', '1363803265:1'),
+(80, 45, '_edit_last', '1'),
+(81, 45, '_wp_page_template', 'default'),
+(82, 45, 'post_options', 'a:2:{s:8:"sb_usage";s:15:"default-sidebar";s:9:"hwa_usage";s:17:"default-headerbar";}'),
+(83, 45, 'page_options', 'a:4:{s:8:"sb_usage";s:15:"default-sidebar";s:9:"hwa_usage";s:17:"default-headerbar";s:8:"category";s:0:"";s:13:"post_per_page";s:0:"";}'),
+(84, 45, '_edit_lock', '1363803281:1'),
+(85, 46, '_edit_last', '1'),
+(86, 46, '_wp_page_template', 'default'),
+(87, 46, 'post_options', 'a:2:{s:8:"sb_usage";s:15:"default-sidebar";s:9:"hwa_usage";s:17:"default-headerbar";}'),
+(88, 46, 'page_options', 'a:4:{s:8:"sb_usage";s:15:"default-sidebar";s:9:"hwa_usage";s:17:"default-headerbar";s:8:"category";s:0:"";s:13:"post_per_page";s:0:"";}'),
+(89, 46, '_edit_lock', '1363803311:1'),
+(90, 47, '_menu_item_type', 'post_type'),
+(91, 47, '_menu_item_menu_item_parent', '0'),
+(92, 47, '_menu_item_object_id', '46'),
+(93, 47, '_menu_item_object', 'page'),
+(94, 47, '_menu_item_target', ''),
+(95, 47, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
+(96, 47, '_menu_item_xfn', ''),
+(97, 47, '_menu_item_url', ''),
+(99, 48, '_menu_item_type', 'post_type'),
+(100, 48, '_menu_item_menu_item_parent', '0'),
+(101, 48, '_menu_item_object_id', '45'),
+(102, 48, '_menu_item_object', 'page'),
+(103, 48, '_menu_item_target', ''),
+(104, 48, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
+(105, 48, '_menu_item_xfn', ''),
+(106, 48, '_menu_item_url', ''),
+(108, 49, '_menu_item_type', 'post_type'),
+(109, 49, '_menu_item_menu_item_parent', '0'),
+(110, 49, '_menu_item_object_id', '44'),
+(111, 49, '_menu_item_object', 'page'),
+(112, 49, '_menu_item_target', ''),
+(113, 49, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
+(114, 49, '_menu_item_xfn', ''),
+(115, 49, '_menu_item_url', '');
 
 -- --------------------------------------------------------
 
@@ -512,7 +577,7 @@ CREATE TABLE IF NOT EXISTS `wp_posts` (
   KEY `type_status_date` (`post_type`,`post_status`,`post_date`,`ID`),
   KEY `post_parent` (`post_parent`),
   KEY `post_author` (`post_author`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=52 ;
 
 --
 -- Dumping data for table `wp_posts`
@@ -537,7 +602,32 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (20, 1, '2013-03-20 13:59:39', '2013-03-20 13:59:39', 'We at Interparty Youth Platform we are praying for peace in Kenya and Transparency. We pray a God given leader is sworn in as the 4th President we should keep praying for our brothers and sisters in Kenya to resist any kind of violence and blood shed. So life is sacred so it should be protected at whatever level. Daniel Tulibagenyi Chairman IYOP.', 'we are praying for peace in Kenya', '', 'inherit', 'open', 'open', '', '15-revision-2', '', '', '2013-03-20 13:59:39', '2013-03-20 13:59:39', '', 15, 'http://localhost/inter/?p=20', 0, 'revision', '', 0),
 (21, 1, '2013-03-20 14:41:02', '2013-03-20 14:41:02', 'We at Interparty Youth Platform are praying for peace and transparency in Kenya. We pray a God-given leader is sworn in as the 4th President. We should keep praying for our brothers and sisters in Kenya to resist any kind of violence and blood shed. Life is sacred so it should be protected at whatever level.\r\n\r\nDaniel Tulibagenyi Chairman IYOP.', 'we are praying for peace in Kenya', '', 'inherit', 'open', 'open', '', '15-revision-3', '', '', '2013-03-20 14:41:02', '2013-03-20 14:41:02', '', 15, 'http://localhost/inter/?p=21', 0, 'revision', '', 0),
 (22, 1, '2013-03-20 14:43:25', '2013-03-20 14:43:25', 'We at Interparty Youth Platform are praying for peace and transparency in Kenya. We pray a God-given leader is sworn in as the 4th President. We should keep praying for our brothers and sisters in Kenya to resist any kind of violence and blood shed. Life is sacred so it should be protected at whatever level.\r\n\r\nDaniel Tulibagenyi Chairman IYOP.', 'We are praying for peace in Kenya', '', 'inherit', 'open', 'open', '', '15-revision-4', '', '', '2013-03-20 14:43:25', '2013-03-20 14:43:25', '', 15, 'http://localhost/inter/?p=22', 0, 'revision', '', 0),
-(23, 1, '2013-03-20 13:43:25', '2013-03-20 13:43:25', 'After the Benedicto Kiwanuka Memorial Lecture, the Organising Committee of the Benedicto Kiwanuka Golden Jubilee Memorial Activities invites you with pleasure to the Benedicto Kiwanuka Golden Jubilee Memorial Mass intended to pray for a successful search and exhumation of his remains. The Mass will be celebrated by His Eminence Emmanuel Cardinal Wamala and with Msgr. Gerald Kalumba as Co-celebrant on Wednesday 05th.Dec.2012 starting 01:30pm at Christ the King Church Kampala.\r\nR.S.V.P:\r\nHon. Muwanga Kivumbi 0772388354\r\nMr. Jude Mbabaali 0772444663\r\nMr. Elvis Kintu Nsonyi 0704682750', 'Test', '', 'inherit', 'open', 'open', '', '11-revision-2', '', '', '2013-03-20 13:43:25', '2013-03-20 13:43:25', '', 11, 'http://localhost/inter/?p=23', 0, 'revision', '', 0);
+(23, 1, '2013-03-20 13:43:25', '2013-03-20 13:43:25', 'After the Benedicto Kiwanuka Memorial Lecture, the Organising Committee of the Benedicto Kiwanuka Golden Jubilee Memorial Activities invites you with pleasure to the Benedicto Kiwanuka Golden Jubilee Memorial Mass intended to pray for a successful search and exhumation of his remains. The Mass will be celebrated by His Eminence Emmanuel Cardinal Wamala and with Msgr. Gerald Kalumba as Co-celebrant on Wednesday 05th.Dec.2012 starting 01:30pm at Christ the King Church Kampala.\r\nR.S.V.P:\r\nHon. Muwanga Kivumbi 0772388354\r\nMr. Jude Mbabaali 0772444663\r\nMr. Elvis Kintu Nsonyi 0704682750', 'Test', '', 'inherit', 'open', 'open', '', '11-revision-2', '', '', '2013-03-20 13:43:25', '2013-03-20 13:43:25', '', 11, 'http://localhost/inter/?p=23', 0, 'revision', '', 0),
+(27, 1, '2013-03-20 18:04:31', '2013-03-20 18:04:31', '[row]\r\n<h2 class="section-title"><span class="ss-label black"><a title="View all posts in News" href="http://localhost/inter/category/news/">News</a></span> the latest</h2>\r\n[posts_slider effect="slide" cats="-1" num="4" excerpt_length="150"]\r\n\r\n[/row]\r\n\r\n[row]\r\n\r\n[insert_posts num="6" display_style="two-col"]\r\n\r\n[/row]', 'Home', '', 'publish', 'open', 'open', '', 'home', '', '', '2013-03-20 18:17:56', '2013-03-20 18:17:56', '', 0, 'http://localhost/inter/?page_id=27', 0, 'page', '', 0),
+(28, 1, '2013-03-20 17:31:39', '2013-03-20 17:31:39', '', 'Home', '', 'inherit', 'open', 'open', '', '27-revision', '', '', '2013-03-20 17:31:39', '2013-03-20 17:31:39', '', 27, 'http://localhost/inter/?p=28', 0, 'revision', '', 0),
+(29, 1, '2013-03-20 17:38:44', '2013-03-20 17:38:44', '[row]\r\n\r\n[col type="half"]\r\n\r\n&lt;h2 class="section-title"&gt;&lt;span class="ss-label black"&gt;&lt;a href="http://labs.saurabh-sharma.net/themes/newsplus/wp/category/featured/" title="View all posts in Featured"&gt;Featured&lt;/a&gt;&lt;/span&gt; Our favorites&lt;/h2&gt;\r\n\r\n[posts_slider effect="slide" cats="2" num="4" excerpt_length="150"]\r\n\r\n[/col]\r\n\r\n[col type="half last"]\r\n\r\n&lt;h2 class="section-title"&gt;&lt;span class="ss-label red"&gt;&lt;a href="http://labs.saurabh-sharma.net/themes/newsplus/wp/blog/" title="View all latest news"&gt;Headlines&lt;/a&gt;&lt;/span&gt; The most recent&lt;/h2&gt;\r\n\r\n[insert_posts num="6" display_style="list-small" cats="-1, -10" ]\r\n\r\n[/col]\r\n\r\n[/row]\r\n\r\n[row]\r\n\r\n&lt;h2 class="section-title"&gt;&lt;span class="ss-label"&gt;&lt;a href="http://labs.saurabh-sharma.net/themes/newsplus/wp/category/technology/" title="View all posts in Technology"&gt;Technology&lt;/a&gt;&lt;/span&gt; What''s trending&lt;/h2&gt;\r\n\r\n[insert_posts cats="5" num="2" display_style="two-col" excerpt_length="150"]\r\n\r\n[/row]\r\n\r\n[row]\r\n\r\n&lt;h2 class="section-title"&gt;&lt;span class="ss-label orange"&gt;Popular&lt;/span&gt; Most commented articles&lt;/h2&gt;\r\n\r\n[insert_posts cats="5" num="2" display_style="list-big" excerpt_length="220" orderby="comment_count"]\r\n\r\n[/row]\r\n\r\n[row]\r\n\r\n&lt;h2 class="section-title"&gt;&lt;span class="ss-label aqua"&gt;Staff Picks&lt;/span&gt; The chosen ones from Editor&lt;/h2&gt;\r\n\r\n[posts_carousel cats="4,5,6" num="8" excerpt_length="90"]', 'Home', '', 'inherit', 'open', 'open', '', '27-revision-2', '', '', '2013-03-20 17:38:44', '2013-03-20 17:38:44', '', 27, 'http://localhost/inter/?p=29', 0, 'revision', '', 0),
+(30, 1, '2013-03-20 17:39:43', '2013-03-20 17:39:43', '[row]\r\n\r\n[col type="half"]\r\n\r\n<h2 class="section-title"><span class="ss-label black"><a href="http://labs.saurabh-sharma.net/themes/newsplus/wp/category/featured/" title="View all posts in Featured">Featured</a></span> Our favorites</h2>\r\n\r\n[posts_slider effect="slide" cats="2" num="4" excerpt_length="150"]\r\n\r\n[/col]\r\n\r\n[col type="half last"]\r\n\r\n<h2 class="section-title"><span class="ss-label red"><a href="http://labs.saurabh-sharma.net/themes/newsplus/wp/blog/" title="View all latest news">Headlines</a></span> The most recent</h2>\r\n\r\n[insert_posts num="6" display_style="list-small" cats="-1, -10" ]\r\n\r\n[/col]\r\n\r\n[/row]\r\n\r\n[row]\r\n\r\n<h2 class="section-title"><span class="ss-label"><a href="http://labs.saurabh-sharma.net/themes/newsplus/wp/category/technology/" title="View all posts in Technology">Technology</a></span> What''s trending</h2>\r\n\r\n[insert_posts cats="5" num="2" display_style="two-col" excerpt_length="150"]\r\n\r\n[/row]\r\n\r\n[row]\r\n\r\n<h2 class="section-title"><span class="ss-label orange">Popular</span> Most commented articles</h2>\r\n\r\n[insert_posts cats="5" num="2" display_style="list-big" excerpt_length="220" orderby="comment_count"]\r\n\r\n[/row]\r\n\r\n[row]\r\n\r\n<h2 class="section-title"><span class="ss-label aqua">Staff Picks</span> The chosen ones from Editor</h2>\r\n\r\n[posts_carousel cats="4,5,6" num="8" excerpt_length="90"]', '', '', 'inherit', 'open', 'open', '', '27-revision-3', '', '', '2013-03-20 17:39:43', '2013-03-20 17:39:43', '', 27, 'http://localhost/inter/?p=30', 0, 'revision', '', 0),
+(31, 1, '2013-03-20 17:43:44', '2013-03-20 17:43:44', '[row]\n\n[col type="half"]\n\n<h2 class="section-title"><span class="ss-label black"><a href="http://localhost/inter/category/news/" title="View all posts in Featured">Featured</a></span> Our favorites</h2>\n\n[posts_slider effect="slide" cats="2" num="4" excerpt_length="150"]\n\n[/col]\n\n[col type="half last"]\n\n<h2 class="section-title"><span class="ss-label red"><a href="http://labs.saurabh-sharma.net/themes/newsplus/wp/blog/" title="View all latest news">Headlines</a></span> The most recent</h2>\n\n[insert_posts num="6" display_style="list-small" cats="-1, -10" ]\n\n[/col]\n\n[/row]\n\n[row]\n\n<h2 class="section-title"><span class="ss-label"><a href="http://labs.saurabh-sharma.net/themes/newsplus/wp/category/technology/" title="View all posts in Technology">Technology</a></span> What''s trending</h2>\n\n[insert_posts cats="5" num="2" display_style="two-col" excerpt_length="150"]\n\n[/row]\n\n[row]\n\n<h2 class="section-title"><span class="ss-label orange">Popular</span> Most commented articles</h2>\n\n[insert_posts cats="5" num="2" display_style="list-big" excerpt_length="220" orderby="comment_count"]\n\n[/row]\n\n[row]\n\n<h2 class="section-title"><span class="ss-label aqua">Staff Picks</span> The chosen ones from Editor</h2>\n\n[posts_carousel cats="-1" num="8" excerpt_length="90"]', '', '', 'inherit', 'open', 'open', '', '27-revision-4', '', '', '2013-03-20 17:43:44', '2013-03-20 17:43:44', '', 27, 'http://localhost/inter/?p=31', 0, 'revision', '', 0),
+(32, 1, '2013-03-20 17:51:27', '2013-03-20 17:51:27', '[row]\n\n[col type="half"]\n<h2 class="section-title"><span class="ss-label black"><a title="View all posts in News" href="http://localhost/inter/category/news/">News</a></span> Our favorites</h2>\n[posts_slider effect="slide" cats="-1" num="4" excerpt_length="150"]\n\n[/col]\n\n[col type="half last"]\n<h2 class="section-title"><span class="ss-label red"><a title="View all latest news" href="http://labs.saurabh-sharma.net/themes/newsplus/wp/blog/">Headlines</a></span> The most recent</h2>\n[insert_posts num="6" display_style="list-small" cats="-1, -10" ]\n\n[/col]\n\n[/row]\n\n[row]\n<h2 class="section-title"><span class="ss-label orange">Popular</span> Most commented articles</h2>\n[insert_posts cats="5" num="2" display_style="list-big" excerpt_length="220" orderby="comment_count"]\n\n[/row]\n\n[row]\n<h2 class="section-title"><span class="ss-label aqua">Staff Picks</span> The chosen ones from Editor</h2>\n[posts_carousel cats="-1" num="8" excerpt_length="90"]', '', '', 'inherit', 'open', 'open', '', '27-revision-5', '', '', '2013-03-20 17:51:27', '2013-03-20 17:51:27', '', 27, 'http://localhost/inter/?p=32', 0, 'revision', '', 0),
+(33, 1, '2013-03-20 17:53:13', '2013-03-20 17:53:13', '[row]\n<h2 class="section-title"><span class="ss-label black"><a title="View all posts in News" href="http://localhost/inter/category/news/">News</a></span> Our favorites</h2>\n[posts_slider effect="slide" cats="-1" num="4" excerpt_length="150"]\n\n[/row]\n\n[row]\n<h2 class="section-title"><span class="ss-label orange">Popular</span> Most commented articles</h2>\n[insert_posts cats="5" num="2" display_style="list-big" excerpt_length="220" orderby="comment_count"]\n\n[/row]\n\n[row]\n<h2 class="section-title"><span class="ss-label aqua">Staff Picks</span> The chosen ones from Editor</h2>\n[posts_carousel cats="-1" num="8" excerpt_length="90"]', '', '', 'inherit', 'open', 'open', '', '27-revision-6', '', '', '2013-03-20 17:53:13', '2013-03-20 17:53:13', '', 27, 'http://localhost/inter/?p=33', 0, 'revision', '', 0),
+(34, 1, '2013-03-20 17:54:50', '2013-03-20 17:54:50', '[row]\n<h2 class="section-title"><span class="ss-label black"><a title="View all posts in News" href="http://localhost/inter/category/news/">News</a></span> Our favorites</h2>\n[posts_slider effect="slide" cats="-1" num="4" excerpt_length="150"]\n\n[/row]\n\n[row]\n<h2 class="section-title"><span class="ss-label orange">Popular</span> Most commented articles</h2>\n[insert_posts cats="5" num="2" display_style="list-big" excerpt_length="220" orderby="comment_count"]\n\n[/row]\n\n[row]\n<h2 class="section-title"><span class="ss-label aqua">Staff Picks</span> The chosen ones from Editor</h2>\n[posts_carousel cats="-1" num="1" excerpt_length="90"]', '', '', 'inherit', 'open', 'open', '', '27-revision-7', '', '', '2013-03-20 17:54:50', '2013-03-20 17:54:50', '', 27, 'http://localhost/inter/?p=34', 0, 'revision', '', 0),
+(35, 1, '2013-03-20 17:55:17', '2013-03-20 17:55:17', '[row]\r\n<h2 class="section-title"><span class="ss-label black"><a title="View all posts in News" href="http://localhost/inter/category/news/">News</a></span> Our favorites</h2>\r\n[posts_slider effect="slide" cats="-1" num="4" excerpt_length="150"]\r\n\r\n[/row]\r\n\r\n[row]\r\n<h2 class="section-title"><span class="ss-label aqua">Staff Picks</span> The chosen ones from Editor</h2>\r\n[posts_carousel cats="-1" num="4" excerpt_length="90"]', '', '', 'inherit', 'open', 'open', '', '27-revision-8', '', '', '2013-03-20 17:55:17', '2013-03-20 17:55:17', '', 27, 'http://localhost/inter/?p=35', 0, 'revision', '', 0),
+(36, 1, '2013-03-20 17:58:43', '2013-03-20 17:58:43', '[row]\n<h2 class="section-title"><span class="ss-label black"><a title="View all posts in News" href="http://localhost/inter/category/news/">News</a></span> Our favorites</h2>\n[posts_slider effect="slide" cats="-1" num="4" excerpt_length="150"]\n\n[/row]\n\n[row]\n<h2 class="section-title"><span class="ss-label aqua">Staff Picks</span> The chosen ones from Editor</h2>\n[posts_carousel cats="-1" num="4" excerpt_length="90"]\n\n[/row]', 'Home', '', 'inherit', 'open', 'open', '', '27-revision-9', '', '', '2013-03-20 17:58:43', '2013-03-20 17:58:43', '', 27, 'http://localhost/inter/?p=36', 0, 'revision', '', 0),
+(37, 1, '2013-03-20 18:02:21', '2013-03-20 18:02:21', '[row]\r\n<h2 class="section-title"><span class="ss-label black"><a title="View all posts in News" href="http://localhost/inter/category/news/">News</a></span> Our favorites</h2>\r\n[posts_slider effect="slide" cats="-1" num="4" excerpt_length="150"]\r\n\r\n[/row]\r\n\r\n[insert_posts num="6" display_style="two-col"]\r\n\r\n[row]\r\n<h2 class="section-title"><span class="ss-label aqua">Staff Picks</span> The chosen ones from Editor</h2>\r\n[posts_carousel cats="-1" num="4" excerpt_length="90"]\r\n\r\n[/row]', 'Home', '', 'inherit', 'open', 'open', '', '27-revision-10', '', '', '2013-03-20 18:02:21', '2013-03-20 18:02:21', '', 27, 'http://localhost/inter/?p=37', 0, 'revision', '', 0),
+(38, 1, '2013-03-20 18:03:14', '2013-03-20 18:03:14', '[row]\r\n<h2 class="section-title"><span class="ss-label black"><a title="View all posts in News" href="http://localhost/inter/category/news/">News</a></span> Our favorites</h2>\r\n[posts_slider effect="slide" cats="-1" num="4" excerpt_length="150"]\r\n\r\n[/row]\r\n\r\n[row]\r\n\r\n[insert_posts num="6" display_style="two-col"]\r\n\r\n[/row]', 'Home', '', 'inherit', 'open', 'open', '', '27-revision-11', '', '', '2013-03-20 18:03:14', '2013-03-20 18:03:14', '', 27, 'http://localhost/inter/?p=38', 0, 'revision', '', 0),
+(39, 1, '2013-03-20 18:13:07', '2013-03-20 18:13:07', '', 'Contact Us', '', 'publish', 'open', 'open', '', 'contact-us', '', '', '2013-03-20 18:13:07', '2013-03-20 18:13:07', '', 0, 'http://localhost/inter/?page_id=39', 0, 'page', '', 0),
+(40, 1, '2013-03-20 18:08:29', '2013-03-20 18:08:29', '', 'Contact Us', '', 'inherit', 'open', 'open', '', '39-revision', '', '', '2013-03-20 18:08:29', '2013-03-20 18:08:29', '', 39, 'http://localhost/inter/?p=40', 0, 'revision', '', 0),
+(41, 1, '2013-03-20 18:09:39', '2013-03-20 18:09:39', '', 'Contact Us', '', 'inherit', 'open', 'open', '', '39-revision-2', '', '', '2013-03-20 18:09:39', '2013-03-20 18:09:39', '', 39, 'http://localhost/inter/?p=41', 0, 'revision', '', 0),
+(42, 1, '2013-03-20 18:13:39', '2013-03-20 18:13:39', ' ', '', '', 'publish', 'open', 'open', '', '42', '', '', '2013-03-20 18:17:30', '2013-03-20 18:17:30', '', 0, 'http://localhost/inter/?p=42', 5, 'nav_menu_item', '', 0),
+(43, 1, '2013-03-20 18:13:38', '2013-03-20 18:13:38', ' ', '', '', 'publish', 'open', 'open', '', '43', '', '', '2013-03-20 18:17:29', '2013-03-20 18:17:29', '', 0, 'http://localhost/inter/?p=43', 1, 'nav_menu_item', '', 0),
+(44, 1, '2013-03-20 18:16:13', '2013-03-20 18:16:13', '', 'News', '', 'publish', 'open', 'open', '', 'news', '', '', '2013-03-20 18:16:13', '2013-03-20 18:16:13', '', 0, 'http://localhost/inter/?page_id=44', 0, 'page', '', 0),
+(45, 1, '2013-03-20 18:16:28', '2013-03-20 18:16:28', '', 'Publications', '', 'publish', 'open', 'open', '', 'publications', '', '', '2013-03-20 18:16:28', '2013-03-20 18:16:28', '', 0, 'http://localhost/inter/?page_id=45', 0, 'page', '', 0),
+(46, 1, '2013-03-20 18:16:44', '2013-03-20 18:16:44', '', 'About', '', 'publish', 'open', 'open', '', 'about', '', '', '2013-03-20 18:16:44', '2013-03-20 18:16:44', '', 0, 'http://localhost/inter/?page_id=46', 0, 'page', '', 0),
+(47, 1, '2013-03-20 18:17:29', '2013-03-20 18:17:29', ' ', '', '', 'publish', 'open', 'open', '', '47', '', '', '2013-03-20 18:17:29', '2013-03-20 18:17:29', '', 0, 'http://localhost/inter/?p=47', 4, 'nav_menu_item', '', 0),
+(48, 1, '2013-03-20 18:17:29', '2013-03-20 18:17:29', ' ', '', '', 'publish', 'open', 'open', '', '48', '', '', '2013-03-20 18:17:29', '2013-03-20 18:17:29', '', 0, 'http://localhost/inter/?p=48', 3, 'nav_menu_item', '', 0),
+(49, 1, '2013-03-20 18:17:29', '2013-03-20 18:17:29', ' ', '', '', 'publish', 'open', 'open', '', '49', '', '', '2013-03-20 18:17:29', '2013-03-20 18:17:29', '', 0, 'http://localhost/inter/?p=49', 2, 'nav_menu_item', '', 0),
+(50, 1, '2013-03-20 18:04:31', '2013-03-20 18:04:31', '[row]\r\n<h2 class="section-title"><span class="ss-label black"><a title="View all posts in News" href="http://localhost/inter/category/news/">News</a></span> Our favorites</h2>\r\n[posts_slider effect="slide" cats="-1" num="4" excerpt_length="150"]\r\n\r\n[/row]\r\n\r\n[row]\r\n\r\n[insert_posts num="6" display_style="two-col"]\r\n\r\n[/row]', 'Home', '', 'inherit', 'open', 'open', '', '27-revision-12', '', '', '2013-03-20 18:04:31', '2013-03-20 18:04:31', '', 27, 'http://localhost/inter/?p=50', 0, 'revision', '', 0),
+(51, 1, '2013-03-20 18:18:59', '2013-03-20 18:18:59', '[row]\n<h2 class="section-title"><span class="ss-label black"><a title="View all posts in News" href="http://localhost/inter/category/news/">News</a></span> the latest</h2>\n[posts_slider effect="slide" cats="-1" num="4" excerpt_length="150"]\n\n[/row]\n\n[row]\n\n[insert_posts num="6" display_style="two-col"]\n\n[/row]', 'Home', '', 'inherit', 'open', 'open', '', '27-autosave', '', '', '2013-03-20 18:18:59', '2013-03-20 18:18:59', '', 27, 'http://localhost/inter/?p=51', 0, 'revision', '', 0);
 
 -- --------------------------------------------------------
 
@@ -587,7 +677,12 @@ CREATE TABLE IF NOT EXISTS `wp_term_relationships` (
 INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_order`) VALUES
 (1, 1, 0),
 (11, 6, 0),
-(15, 6, 0);
+(15, 6, 0),
+(42, 7, 0),
+(43, 7, 0),
+(47, 7, 0),
+(48, 7, 0),
+(49, 7, 0);
 
 -- --------------------------------------------------------
 
@@ -615,7 +710,7 @@ CREATE TABLE IF NOT EXISTS `wp_term_taxonomy` (
 INSERT INTO `wp_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `description`, `parent`, `count`) VALUES
 (1, 1, 'category', '', 0, 0),
 (6, 6, 'category', '', 0, 2),
-(7, 7, 'nav_menu', '', 0, 0);
+(7, 7, 'nav_menu', '', 0, 5);
 
 -- --------------------------------------------------------
 
@@ -656,7 +751,7 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 (15, 1, 'managenav-menuscolumnshidden', 'a:4:{i:0;s:11:"link-target";i:1;s:11:"css-classes";i:2;s:3:"xfn";i:3;s:11:"description";}'),
 (16, 1, 'metaboxhidden_nav-menus', 'a:3:{i:0;s:8:"add-post";i:1;s:12:"add-post_tag";i:2;s:15:"add-post_format";}'),
 (17, 1, 'wp_user-settings', 'libraryContent=browse&editor=tinymce'),
-(18, 1, 'wp_user-settings-time', '1363790658'),
+(18, 1, 'wp_user-settings-time', '1363801926'),
 (19, 1, 'nav_menu_recently_edited', '7');
 
 -- --------------------------------------------------------
