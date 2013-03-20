@@ -1,0 +1,346 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: \n"
+"X-Poedit-Country: \n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: \n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: archive.php:85
+#: author.php:80
+#: page.php:36
+#: search.php:76
+#: single.php:44
+#: template-full-width.php:33
+#: template-sidebar-left.php:41
+#: template-sidebar-right.php:33
+#@ wpzoom
+msgid "EDIT"
+msgstr ""
+
+#: archive.php:85
+#: author.php:80
+#: search.php:76
+#@ wpzoom
+msgid "no comments"
+msgstr ""
+
+#: archive.php:85
+#: author.php:80
+#: search.php:76
+#@ wpzoom
+msgid "1 comment"
+msgstr ""
+
+#: archive.php:85
+#: author.php:80
+#: search.php:76
+#@ wpzoom
+msgid "% comments"
+msgstr ""
+
+#: comments.php:52
+#, php-format
+#@ wpzoom
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: comments.php:57
+#@ wpzoom
+msgid "You must be"
+msgstr ""
+
+#: comments.php:57
+#@ wpzoom
+msgid "logged in"
+msgstr ""
+
+#: comments.php:57
+#@ wpzoom
+msgid "to post a comment."
+msgstr ""
+
+#: comments.php:64
+#@ wpzoom
+msgid "Logged in as"
+msgstr ""
+
+#: comments.php:64
+#@ wpzoom
+msgid "Log out"
+msgstr ""
+
+#: comments.php:68
+#@ wpzoom
+msgid "Name"
+msgstr ""
+
+#: comments.php:71
+#@ wpzoom
+msgid "E-Mail"
+msgstr ""
+
+#: comments.php:74
+#@ wpzoom
+msgid "Website"
+msgstr ""
+
+#: functions/wpzoom-functions.php:371
+#@ default
+msgid "Page"
+msgstr ""
+
+#: header.php:75
+#: header.php:76
+#@ wpzoom
+msgid "search"
+msgstr ""
+
+#: page.php:35
+#: single.php:41
+#: template-full-width.php:32
+#: template-sidebar-left.php:40
+#: template-sidebar-right.php:32
+#@ wpzoom
+msgid "Pages"
+msgstr ""
+
+#: single.php:42
+#@ wpzoom
+msgid "Tags"
+msgstr ""
+
+#: functions/wpzoom-functions.php:353
+#@ wpzoom
+msgid "Search results for &#39;"
+msgstr ""
+
+#: functions/wpzoom-functions.php:356
+#@ wpzoom
+msgid "Posts tagged &#39;"
+msgstr ""
+
+#: functions/wpzoom-functions.php:363
+#@ wpzoom
+msgid "Articles posted by "
+msgstr ""
+
+#: functions/wpzoom-functions.php:366
+#@ wpzoom
+msgid "Error 404"
+msgstr ""
+
+#: archive.php:24
+#: archive.php:26
+#: archive.php:28
+#: archive.php:30
+#@ wpzoom
+msgid "Archive for"
+msgstr ""
+
+#: archive.php:99
+#: author.php:95
+#: search.php:90
+#@ wpzoom
+msgid "&laquo; Older Entries"
+msgstr ""
+
+#: archive.php:99
+#: author.php:95
+#: search.php:90
+#@ wpzoom
+msgid "Newer Entries &raquo;"
+msgstr ""
+
+#: author.php:27
+#@ wpzoom
+msgid "Author Archive"
+msgstr ""
+
+#: comments.php:18
+#@ wpzoom
+msgid "No Comments"
+msgstr ""
+
+#: comments.php:18
+#@ wpzoom
+msgid "1 Comment"
+msgstr ""
+
+#: comments.php:18
+#@ wpzoom
+msgid "% Comments"
+msgstr ""
+
+#: comments.php:31
+#@ wpzoom
+msgid "No comments"
+msgstr ""
+
+#: comments.php:34
+#@ wpzoom
+msgid "Be the first one to leave a comment."
+msgstr ""
+
+#: comments.php:41
+#@ wpzoom
+msgid "Comments are closed"
+msgstr ""
+
+#: comments.php:42
+#@ wpzoom
+msgid "Sorry, but you cannot leave a comment for this post."
+msgstr ""
+
+#: comments.php:52
+#@ wpzoom
+msgid "Post a Comment"
+msgstr ""
+
+#: comments.php:68
+#: comments.php:71
+#@ wpzoom
+msgid "required"
+msgstr ""
+
+#: comments.php:78
+#@ wpzoom
+msgid "submit"
+msgstr ""
+
+#: functions/wpzoom-core.php:25
+#@ wpzoom
+msgid "Top Menu"
+msgstr ""
+
+#: functions/wpzoom-core.php:26
+#@ wpzoom
+msgid "Bottom Menu"
+msgstr ""
+
+#: functions/wpzoom-functions.php:292
+#@ default
+msgid "Home"
+msgstr ""
+
+#: search.php:22
+#@ wpzoom
+msgid "Search Results for"
+msgstr ""
+
+#: single.php:44
+#@ wpzoom
+msgid "in"
+msgstr ""
+
+#: single.php:44
+#@ wpzoom
+msgid "on"
+msgstr ""
+
+#: archive.php:95
+#@ wpzoom
+msgid "Sorry, there are no posts in this category."
+msgstr ""
+
+#: author.php:90
+#@ wpzoom
+msgid "Sorry, there are no posts by this author."
+msgstr ""
+
+#: footer.php:14
+#@ wpzoom
+msgid "Education WordPress Theme"
+msgstr ""
+
+#: footer.php:14
+#@ wpzoom
+msgid "by"
+msgstr ""
+
+#: functions/wpzoom-core.php:112
+#@ default
+msgctxt "post type general name"
+msgid "Slideshow"
+msgstr ""
+
+#: functions/wpzoom-core.php:113
+#@ default
+msgctxt "post type singular name"
+msgid "Slideshow Item"
+msgstr ""
+
+#: functions/wpzoom-core.php:114
+#@ default
+msgctxt "slideshow item"
+msgid "Add a New Slide"
+msgstr ""
+
+#: functions/wpzoom-core.php:115
+#@ default
+msgid "Add New Slideshow Item"
+msgstr ""
+
+#: functions/wpzoom-core.php:116
+#@ default
+msgid "Edit Slideshow Item"
+msgstr ""
+
+#: functions/wpzoom-core.php:117
+#@ default
+msgid "New Slideshow Item"
+msgstr ""
+
+#: functions/wpzoom-core.php:118
+#@ default
+msgid "View Slideshow Item"
+msgstr ""
+
+#: functions/wpzoom-core.php:119
+#@ default
+msgid "Search Slideshow"
+msgstr ""
+
+#: functions/wpzoom-core.php:120
+#@ default
+msgid "Nothing found"
+msgstr ""
+
+#: functions/wpzoom-core.php:121
+#@ default
+msgid "Nothing found in Trash"
+msgstr ""
+
+#: header.php:75
+#@ wpzoom
+msgid "Search"
+msgstr ""
+
+#: index.php:50
+#@ wpzoom
+msgid "Edit this page"
+msgstr ""
+
+#: search.php:86
+#@ wpzoom
+msgid "Sorry, no posts were found."
+msgstr ""
+
+#: single.php:44
+#@ wpzoom
+msgid "By"
+msgstr ""
+

@@ -1,0 +1,39 @@
+Academica Theme
+http://www.wpzoom.com/themes/academica
+ 
+CHANGELOG
+---------
+       
+V 2.0.3 (10 March, 2013)
+	- Added the Blog custom page template
+	- Edited files:
+		- loop.php
+	- New files:
+		- template-blog.php
+
+V 2.0.2 (18 February, 2013)
+	- Added Fonts & Styling options to WPZOOM Theme Options
+	- Files edited:
+		- style.css
+		- /functions/theme/options.php
+
+V 2.0 (31 December, 2012)
+	- Theme has been ported to the new WPZOOM Framework
+	- Added support for native WordPress image cropping
+	- The theme doesn't uses TimThumb script for thumbnails cropping anymore
+	- All files have been edited
+	- Folders/files structure has been changed
+
+V 1.2.2 (13 December, 2011)
+	- An update for WP 3.3
+	- Files edited: header.php, style.css
+
+V 1.2 (6th August, 2011)
+	- An important security fix: /scripts/timthumb.php has been updated to 2.0
+
+V 1.1 (20th July, 2011)
+	- theme moved to new back-end interface of WPZOOM
+	- overall theme improvements, all files have been modified
+
+V 1.0 (18th August, 2010)
+	- initial release
