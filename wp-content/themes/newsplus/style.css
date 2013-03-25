@@ -1064,10 +1064,18 @@ ul.sec-menu > li.current_page_ancestor > a {
 .brand {
 	position: relative;
 	float: left;
-	width: auto;
+	width: 109px;
+	height: 81px;
 	max-width: 25%;
 	margin: 0 0 2.25em;
 	padding: 0;
+}
+
+.iyop_title {
+	float: left;
+	width:auto;
+	margin-left: 10px;
+	margin-top: 20px;
 }
 
 .brand.right {
@@ -3448,7 +3456,7 @@ ul.list11 li:before  {
 	line-height: inherit;
 	color: #ffffff;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
-	background-color: #333;
+	background-color: #F7E600;
 }
 
 .ss-label.red {

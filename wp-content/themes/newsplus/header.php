@@ -66,7 +66,11 @@ global $pls_disable_resp_css, $pls_top_bar_hide, $pls_cb_item_left, $pls_cb_item
 						site_header_tag( 'open' ); ?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php if ( '' != $pls_logo ) echo $pls_logo; else { echo get_template_directory_uri() . '/images/logo.png' ; } ?>" alt="<?php bloginfo( 'name' ); ?>" title="<?php bloginfo( 'name' ); ?>" /></a>
 						<?php site_header_tag( 'close' );
                     endif; ?>
+		
                 </div><!-- .brand -->
+		<div class="iyop_title"> 
+		<h1> Interparty Youth Platform (IYOP) </h1>
+		 </div>
                 <?php get_template_part( 'includes/header-widget-area' ); ?>
             </div><!-- #header .wrap -->
         </header><!-- #header -->
